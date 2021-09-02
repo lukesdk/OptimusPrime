@@ -91,13 +91,14 @@ namespace UI
             // 
             // btnSelVta
             // 
+            this.btnSelVta.BackColor = System.Drawing.Color.Yellow;
             this.btnSelVta.Location = new System.Drawing.Point(7, 436);
             this.btnSelVta.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelVta.Name = "btnSelVta";
             this.btnSelVta.Size = new System.Drawing.Size(126, 49);
             this.btnSelVta.TabIndex = 5;
             this.btnSelVta.Text = "SELECCIONAR PRODUCTO";
-            this.btnSelVta.UseVisualStyleBackColor = true;
+            this.btnSelVta.UseVisualStyleBackColor = false;
             this.btnSelVta.Click += new System.EventHandler(this.btnSelVta_Click);
             // 
             // lblPreUnitario
@@ -113,7 +114,7 @@ namespace UI
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(159, 49);
+            this.lblDesc.Location = new System.Drawing.Point(138, 49);
             this.lblDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(83, 13);
@@ -122,24 +123,26 @@ namespace UI
             // 
             // btnBorrar
             // 
+            this.btnBorrar.BackColor = System.Drawing.Color.Red;
             this.btnBorrar.Location = new System.Drawing.Point(696, 181);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(126, 44);
             this.btnBorrar.TabIndex = 3;
             this.btnBorrar.Text = "BORRAR PRODUCTO";
-            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnModificar
             // 
+            this.btnModificar.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnModificar.Location = new System.Drawing.Point(313, 181);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(126, 45);
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "MODIFICAR PRODUCTO";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtPcosto
@@ -147,7 +150,7 @@ namespace UI
             this.txtPcosto.Location = new System.Drawing.Point(246, 107);
             this.txtPcosto.Margin = new System.Windows.Forms.Padding(2);
             this.txtPcosto.Name = "txtPcosto";
-            this.txtPcosto.Size = new System.Drawing.Size(219, 20);
+            this.txtPcosto.Size = new System.Drawing.Size(292, 20);
             this.txtPcosto.TabIndex = 18;
             // 
             // txtPunitario
@@ -155,7 +158,7 @@ namespace UI
             this.txtPunitario.Location = new System.Drawing.Point(246, 77);
             this.txtPunitario.Margin = new System.Windows.Forms.Padding(2);
             this.txtPunitario.Name = "txtPunitario";
-            this.txtPunitario.Size = new System.Drawing.Size(219, 20);
+            this.txtPunitario.Size = new System.Drawing.Size(292, 20);
             this.txtPunitario.TabIndex = 17;
             // 
             // txtDescripcion
@@ -163,18 +166,19 @@ namespace UI
             this.txtDescripcion.Location = new System.Drawing.Point(246, 46);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(219, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(292, 20);
             this.txtDescripcion.TabIndex = 16;
             // 
             // btnNuevo
             // 
+            this.btnNuevo.BackColor = System.Drawing.Color.Lime;
             this.btnNuevo.Location = new System.Drawing.Point(7, 181);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(126, 45);
             this.btnNuevo.TabIndex = 1;
             this.btnNuevo.Text = "NUEVO PRODUCTO";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblCant
@@ -291,12 +295,13 @@ namespace UI
             // 
             // btnInactivos
             // 
+            this.btnInactivos.BackColor = System.Drawing.Color.Gray;
             this.btnInactivos.Location = new System.Drawing.Point(696, 437);
             this.btnInactivos.Name = "btnInactivos";
             this.btnInactivos.Size = new System.Drawing.Size(126, 48);
             this.btnInactivos.TabIndex = 4;
             this.btnInactivos.Text = "PRODUCTOS INACTIVOS";
-            this.btnInactivos.UseVisualStyleBackColor = true;
+            this.btnInactivos.UseVisualStyleBackColor = false;
             this.btnInactivos.Click += new System.EventHandler(this.btnInactivos_Click);
             // 
             // Productos

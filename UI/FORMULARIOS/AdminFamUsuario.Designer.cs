@@ -56,7 +56,7 @@ namespace UI
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(116, 26);
+            this.lblUsuario.Location = new System.Drawing.Point(129, 15);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(59, 13);
             this.lblUsuario.TabIndex = 61;

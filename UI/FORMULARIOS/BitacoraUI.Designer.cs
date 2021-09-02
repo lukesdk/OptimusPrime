@@ -32,6 +32,7 @@ namespace UI
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ModeloBitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkListCriticidad = new System.Windows.Forms.CheckedListBox();
@@ -45,11 +46,14 @@ namespace UI
             this.rpv1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.chkTodos = new System.Windows.Forms.CheckBox();
             this.chkTodas = new System.Windows.Forms.CheckBox();
-            this.ModeloBitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ModeloBitacoraBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ModeloBitacoraBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ModeloBitacoraBindingSource
+            // 
+            this.ModeloBitacoraBindingSource.DataSource = typeof(UI.Modelo.ModeloBitacora);
             // 
             // btn_filtrar
             // 
@@ -138,7 +142,7 @@ namespace UI
             // btn_volver
             // 
             this.btn_volver.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_volver.Location = new System.Drawing.Point(10, 7);
+            this.btn_volver.Location = new System.Drawing.Point(547, 11);
             this.btn_volver.Margin = new System.Windows.Forms.Padding(2);
             this.btn_volver.Name = "btn_volver";
             this.btn_volver.Size = new System.Drawing.Size(100, 34);
@@ -183,10 +187,6 @@ namespace UI
             this.chkTodas.UseVisualStyleBackColor = true;
             this.chkTodas.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // ModeloBitacoraBindingSource
-            // 
-            this.ModeloBitacoraBindingSource.DataSource = typeof(UI.Modelo.ModeloBitacora);
-            // 
             // BitacoraUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,9 +210,9 @@ namespace UI
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BitacoraUI_FormClosing);
             this.Load += new System.EventHandler(this.Bitacora_Load);
             this.Enter += new System.EventHandler(this.BitacoraUI_Enter);
+            ((System.ComponentModel.ISupportInitialize)(this.ModeloBitacoraBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ModeloBitacoraBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -40,45 +40,46 @@ namespace UI
             // 
             // btnVolver
             // 
+            this.btnVolver.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnVolver.Location = new System.Drawing.Point(10, 11);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(68, 25);
+            this.btnVolver.Size = new System.Drawing.Size(68, 40);
             this.btnVolver.TabIndex = 1;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Text = "VOLVER";
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnNueva
             // 
-            this.btnNueva.Location = new System.Drawing.Point(175, 55);
+            this.btnNueva.Location = new System.Drawing.Point(175, 52);
             this.btnNueva.Margin = new System.Windows.Forms.Padding(2);
             this.btnNueva.Name = "btnNueva";
-            this.btnNueva.Size = new System.Drawing.Size(68, 28);
+            this.btnNueva.Size = new System.Drawing.Size(100, 40);
             this.btnNueva.TabIndex = 2;
-            this.btnNueva.Text = "Nueva";
+            this.btnNueva.Text = "NUEVA";
             this.btnNueva.UseVisualStyleBackColor = true;
             this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(175, 95);
+            this.btnModificar.Location = new System.Drawing.Point(175, 96);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(69, 35);
+            this.btnModificar.Size = new System.Drawing.Size(100, 40);
             this.btnModificar.TabIndex = 3;
-            this.btnModificar.Text = "Modificar nombre";
+            this.btnModificar.Text = "MODIFICAR NOMBRE";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(175, 196);
+            this.btnBaja.Location = new System.Drawing.Point(175, 184);
             this.btnBaja.Margin = new System.Windows.Forms.Padding(2);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(69, 28);
+            this.btnBaja.Size = new System.Drawing.Size(100, 40);
             this.btnBaja.TabIndex = 4;
-            this.btnBaja.Text = "Baja";
+            this.btnBaja.Text = "BAJAS";
             this.btnBaja.UseVisualStyleBackColor = true;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
@@ -94,12 +95,12 @@ namespace UI
             // 
             // btnModificarTodo
             // 
-            this.btnModificarTodo.Location = new System.Drawing.Point(175, 145);
+            this.btnModificarTodo.Location = new System.Drawing.Point(175, 140);
             this.btnModificarTodo.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarTodo.Name = "btnModificarTodo";
-            this.btnModificarTodo.Size = new System.Drawing.Size(69, 37);
+            this.btnModificarTodo.Size = new System.Drawing.Size(100, 40);
             this.btnModificarTodo.TabIndex = 6;
-            this.btnModificarTodo.Text = "Modificar Patentes";
+            this.btnModificarTodo.Text = "MODIFICAR PATENTES";
             this.btnModificarTodo.UseVisualStyleBackColor = true;
             this.btnModificarTodo.Click += new System.EventHandler(this.btnModificarTodo_Click);
             // 
@@ -107,7 +108,7 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(266, 239);
+            this.ClientSize = new System.Drawing.Size(283, 233);
             this.Controls.Add(this.btnModificarTodo);
             this.Controls.Add(this.chklstFamilias);
             this.Controls.Add(this.btnBaja);
@@ -115,7 +116,7 @@ namespace UI
             this.Controls.Add(this.btnNueva);
             this.Controls.Add(this.btnVolver);
             this.Name = "Familias";
-            this.Text = "Familias";
+            this.Text = "FAMILIAS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Familias_FormClosing);
             this.Load += new System.EventHandler(this.Familias_Load);
             this.Enter += new System.EventHandler(this.Familias_Enter);

@@ -29,6 +29,7 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_user = new System.Windows.Forms.TextBox();
@@ -38,12 +39,14 @@ namespace UI
             this.btn_salir = new System.Windows.Forms.Button();
             this.cbo_idioma = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 15);
+            this.label1.Location = new System.Drawing.Point(11, 99);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(285, 13);
@@ -54,7 +57,7 @@ namespace UI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 53);
+            this.label2.Location = new System.Drawing.Point(13, 137);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
@@ -63,7 +66,7 @@ namespace UI
             // 
             // txt_user
             // 
-            this.txt_user.Location = new System.Drawing.Point(13, 70);
+            this.txt_user.Location = new System.Drawing.Point(15, 154);
             this.txt_user.Margin = new System.Windows.Forms.Padding(2);
             this.txt_user.Name = "txt_user";
             this.txt_user.Size = new System.Drawing.Size(273, 20);
@@ -71,7 +74,7 @@ namespace UI
             // 
             // txt_contraseña
             // 
-            this.txt_contraseña.Location = new System.Drawing.Point(14, 125);
+            this.txt_contraseña.Location = new System.Drawing.Point(16, 209);
             this.txt_contraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txt_contraseña.Name = "txt_contraseña";
             this.txt_contraseña.Size = new System.Drawing.Size(272, 20);
@@ -80,7 +83,7 @@ namespace UI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 109);
+            this.label3.Location = new System.Drawing.Point(12, 193);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
@@ -89,7 +92,7 @@ namespace UI
             // 
             // btn_ingresar
             // 
-            this.btn_ingresar.Location = new System.Drawing.Point(13, 212);
+            this.btn_ingresar.Location = new System.Drawing.Point(15, 296);
             this.btn_ingresar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ingresar.Name = "btn_ingresar";
             this.btn_ingresar.Size = new System.Drawing.Size(92, 31);
@@ -100,7 +103,7 @@ namespace UI
             // 
             // btn_salir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(194, 212);
+            this.btn_salir.Location = new System.Drawing.Point(196, 296);
             this.btn_salir.Margin = new System.Windows.Forms.Padding(2);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(92, 31);
@@ -112,7 +115,7 @@ namespace UI
             // cbo_idioma
             // 
             this.cbo_idioma.FormattingEnabled = true;
-            this.cbo_idioma.Location = new System.Drawing.Point(194, 170);
+            this.cbo_idioma.Location = new System.Drawing.Point(196, 254);
             this.cbo_idioma.Margin = new System.Windows.Forms.Padding(2);
             this.cbo_idioma.Name = "cbo_idioma";
             this.cbo_idioma.Size = new System.Drawing.Size(92, 21);
@@ -122,19 +125,30 @@ namespace UI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 178);
+            this.label4.Location = new System.Drawing.Point(13, 262);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "SELECCIONAR IDIOMA:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(105, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(72, 75);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
-            this.ClientSize = new System.Drawing.Size(298, 251);
+            this.ClientSize = new System.Drawing.Size(302, 336);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbo_idioma);
             this.Controls.Add(this.btn_salir);
@@ -149,6 +163,7 @@ namespace UI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACCESO AL SISTEMA";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,6 +180,7 @@ namespace UI
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.ComboBox cbo_idioma;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

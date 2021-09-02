@@ -67,22 +67,24 @@ namespace UI
             // 
             // btnDesactivar
             // 
-            this.btnDesactivar.Location = new System.Drawing.Point(238, 313);
+            this.btnDesactivar.BackColor = System.Drawing.Color.Red;
+            this.btnDesactivar.Location = new System.Drawing.Point(238, 302);
             this.btnDesactivar.Name = "btnDesactivar";
-            this.btnDesactivar.Size = new System.Drawing.Size(83, 30);
+            this.btnDesactivar.Size = new System.Drawing.Size(83, 41);
             this.btnDesactivar.TabIndex = 10;
             this.btnDesactivar.Text = "DESACTIVAR";
-            this.btnDesactivar.UseVisualStyleBackColor = true;
+            this.btnDesactivar.UseVisualStyleBackColor = false;
             this.btnDesactivar.Click += new System.EventHandler(this.btnDesactivar_Click);
             // 
             // btnActivar
             // 
+            this.btnActivar.BackColor = System.Drawing.Color.Lime;
             this.btnActivar.Location = new System.Drawing.Point(238, 79);
             this.btnActivar.Name = "btnActivar";
-            this.btnActivar.Size = new System.Drawing.Size(83, 30);
+            this.btnActivar.Size = new System.Drawing.Size(83, 38);
             this.btnActivar.TabIndex = 9;
             this.btnActivar.Text = "ACTIVAR";
-            this.btnActivar.UseVisualStyleBackColor = true;
+            this.btnActivar.UseVisualStyleBackColor = false;
             this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
             // 
             // lstActivos

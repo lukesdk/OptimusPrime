@@ -52,7 +52,7 @@ namespace UI
             // lblProgreso
             // 
             this.lblProgreso.AutoSize = true;
-            this.lblProgreso.Location = new System.Drawing.Point(162, 261);
+            this.lblProgreso.Location = new System.Drawing.Point(301, 241);
             this.lblProgreso.Name = "lblProgreso";
             this.lblProgreso.Size = new System.Drawing.Size(21, 13);
             this.lblProgreso.TabIndex = 56;
@@ -60,10 +60,10 @@ namespace UI
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(65, 233);
+            this.progressBar1.Location = new System.Drawing.Point(60, 233);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(236, 26);
+            this.progressBar1.Size = new System.Drawing.Size(240, 26);
             this.progressBar1.TabIndex = 55;
             // 
             // txtBackFiles
@@ -124,7 +124,7 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(312, 316);
+            this.ClientSize = new System.Drawing.Size(321, 316);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblProgreso);

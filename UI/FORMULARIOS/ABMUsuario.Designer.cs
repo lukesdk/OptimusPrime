@@ -66,7 +66,7 @@ namespace UI
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(86, 50);
             this.btnVolver.TabIndex = 27;
-            this.btnVolver.Text = "Volver";
+            this.btnVolver.Text = "VOLVER";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -143,9 +143,9 @@ namespace UI
             this.label3.Location = new System.Drawing.Point(3, 239);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 23;
-            this.label3.Text = "Domicilio:";
+            this.label3.Text = "DOMICILIO:";
             // 
             // label2
             // 
@@ -153,9 +153,9 @@ namespace UI
             this.label2.Location = new System.Drawing.Point(2, 111);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 22;
-            this.label2.Text = "Apellido:";
+            this.label2.Text = "APELLIDO:";
             // 
             // label1
             // 
@@ -163,30 +163,32 @@ namespace UI
             this.label1.Location = new System.Drawing.Point(2, 69);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Nombre:";
+            this.label1.Text = "NOMBRE:";
             // 
             // btnBorrar
             // 
+            this.btnBorrar.BackColor = System.Drawing.Color.Red;
             this.btnBorrar.Location = new System.Drawing.Point(427, 554);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(86, 50);
             this.btnBorrar.TabIndex = 10;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Text = "BORRAR";
+            this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnModificar
             // 
+            this.btnModificar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnModificar.Location = new System.Drawing.Point(213, 554);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(86, 50);
             this.btnModificar.TabIndex = 9;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
             // txtDomicilio
@@ -215,13 +217,14 @@ namespace UI
             // 
             // btnNuevo
             // 
+            this.btnNuevo.BackColor = System.Drawing.Color.Lime;
             this.btnNuevo.Location = new System.Drawing.Point(5, 554);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(86, 50);
             this.btnNuevo.TabIndex = 8;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // txtEmail
@@ -236,9 +239,9 @@ namespace UI
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(3, 197);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 13);
+            this.label12.Size = new System.Drawing.Size(42, 13);
             this.label12.TabIndex = 29;
-            this.label12.Text = "E-mail:";
+            this.label12.Text = "EMAIL:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtTel
@@ -253,15 +256,15 @@ namespace UI
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(2, 157);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 35;
-            this.label6.Text = "Teléfono:";
+            this.label6.Text = "TELEFONO:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(358, 176);
+            this.label7.Location = new System.Drawing.Point(358, 188);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);

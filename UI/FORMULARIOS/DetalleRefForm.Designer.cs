@@ -54,7 +54,7 @@ namespace UI
             this.dgDetalleVenta.Name = "dgDetalleVenta";
             this.dgDetalleVenta.ReadOnly = true;
             this.dgDetalleVenta.RowTemplate.Height = 24;
-            this.dgDetalleVenta.Size = new System.Drawing.Size(328, 199);
+            this.dgDetalleVenta.Size = new System.Drawing.Size(454, 199);
             this.dgDetalleVenta.TabIndex = 0;
             this.dgDetalleVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDetalleVenta_CellContentClick);
             // 
@@ -85,12 +85,12 @@ namespace UI
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnVolver.Location = new System.Drawing.Point(117, 11);
+            this.btnVolver.Location = new System.Drawing.Point(156, 11);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(83, 39);
             this.btnVolver.TabIndex = 1;
-            this.btnVolver.Text = "Volver";
+            this.btnVolver.Text = "VOLVER";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -98,7 +98,7 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 277);
+            this.ClientSize = new System.Drawing.Size(472, 277);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgDetalleVenta);
             this.Name = "DetalleRefForm";

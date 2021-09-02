@@ -104,9 +104,9 @@ namespace UI
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 159);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Directorio:";
+            this.label1.Text = "DESTINO:";
             // 
             // txtDirectorio
             // 
@@ -118,9 +118,9 @@ namespace UI
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(91, 264);
+            this.btnAceptar.Location = new System.Drawing.Point(91, 260);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(130, 25);
+            this.btnAceptar.Size = new System.Drawing.Size(130, 40);
             this.btnAceptar.TabIndex = 31;
             this.btnAceptar.Text = "ACEPTAR";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@ namespace UI
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(81, 205);
+            this.progressBar1.Location = new System.Drawing.Point(60, 207);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(247, 26);
@@ -150,7 +150,7 @@ namespace UI
             // lblProgreso
             // 
             this.lblProgreso.AutoSize = true;
-            this.lblProgreso.Location = new System.Drawing.Point(143, 233);
+            this.lblProgreso.Location = new System.Drawing.Point(310, 215);
             this.lblProgreso.Name = "lblProgreso";
             this.lblProgreso.Size = new System.Drawing.Size(21, 13);
             this.lblProgreso.TabIndex = 42;
@@ -180,7 +180,7 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 297);
+            this.ClientSize = new System.Drawing.Size(334, 303);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblProgreso);

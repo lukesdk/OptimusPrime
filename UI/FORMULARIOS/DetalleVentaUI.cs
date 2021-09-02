@@ -12,6 +12,7 @@ namespace UI
 
     public partial class DetalleVentaUI : Form, IDetalleVenta
     {
+        private const string nombreForm = "Venta";
         private const string nomEntidad = "DetalleVenta";
         private const string campoId = "DetalleId";
 
@@ -112,7 +113,7 @@ namespace UI
         {
             txtCant.Text = string.Empty;
             txtCodProd.Text = string.Empty;
-            lblCliente.Text = "Cliente:";
+           
         }
 
         private Venta CrearNuevaVenta(int estadoId, DateTime fecha, float monto, int tipoVta, int usuarioId, int clienteId)
@@ -146,7 +147,7 @@ namespace UI
             if (resultado == DialogResult.OK)
             {
                 ClienteSeleccionado = cliente.ObtenerClienteSeleccionado();
-                lblCliente.Text += ClienteSeleccionado.NombreCompleto;
+                lblCliente.Text = $"CLIENTE: {ClienteSeleccionado.NombreCompleto}";
                 radioVtaCC.Enabled = true;
                 radioVtaCC.Checked = true;
             }
@@ -187,8 +188,12 @@ namespace UI
             radioVtaSimple.Enabled = true;
             rbSe.Enabled = true;
 
-            Alert.ShowSimpleAlert("Venta cancelada", "MSJ038");
-
+            if (MessageBox.Show("       ¿Desea Cancelar la venta?","", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            //Alert.ShowSimpleAlert("Venta cancelada", "MSJ038");
+            
             
         }
 
@@ -208,7 +213,7 @@ namespace UI
             {
                 ventaBLL.Crear(CrearNuevaVenta(VentaDAL.EstadoVenta.Pendiente.GetHashCode(), DateTime.UtcNow, CalcularMontoTotal(), VentaDAL.TipoVenta.Seña.GetHashCode(), UsuarioActivo.UsuarioId, ClienteSeleccionado.ClienteId));
             }
-
+            
             foreach (var linea in ListGrid)
             {
                 DetalleEnGrid = new DetalleVenta() { DetalleId = sqlUtils.GenerarId(campoId, nomEntidad), VentaId = ventaBLL.ObtenerUltimoIdVenta() };
@@ -216,10 +221,12 @@ namespace UI
                 DetalleEnGrid.LineasDetalle.Add(linea);
 
                 detalleVentaBLL.Crear(DetalleEnGrid);
+
+                
             }
-
-            Alert.ShowSimpleAlert( "MSJ086", "Venta realizada con exito");
-
+            //Alert.ShowSimpleAlert( "MSJ086", "Venta realizada con exito");
+            
+           
             VaciaListGrid();
 
             RecargarDatagrid();
@@ -228,9 +235,13 @@ namespace UI
             ProductoSeleccionado = null;
             txtCant.Text = "";
             txtCodProd.Text = "";
-            radioVtaCC.Enabled = false;
+            radioVtaCC.Enabled = true;
             radioVtaSimple.Enabled = true;
             rbSe.Enabled = true;
+            lblCliente.Text = "";
+
+
+            MessageBox.Show("       Venta Realiza con exito");
         }
 
         private void VaciaListGrid()

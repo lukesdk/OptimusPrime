@@ -79,7 +79,7 @@ namespace UI
             // btnActivar
             // 
             this.btnActivar.BackColor = System.Drawing.Color.Lime;
-            this.btnActivar.Location = new System.Drawing.Point(338, 141);
+            this.btnActivar.Location = new System.Drawing.Point(338, 72);
             this.btnActivar.Name = "btnActivar";
             this.btnActivar.Size = new System.Drawing.Size(91, 34);
             this.btnActivar.TabIndex = 5;
@@ -90,7 +90,7 @@ namespace UI
             // btnDesactivar
             // 
             this.btnDesactivar.BackColor = System.Drawing.Color.Red;
-            this.btnDesactivar.Location = new System.Drawing.Point(338, 213);
+            this.btnDesactivar.Location = new System.Drawing.Point(338, 263);
             this.btnDesactivar.Name = "btnDesactivar";
             this.btnDesactivar.Size = new System.Drawing.Size(91, 34);
             this.btnDesactivar.TabIndex = 6;
@@ -101,7 +101,7 @@ namespace UI
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Location = new System.Drawing.Point(338, 12);
+            this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 34);
             this.button1.TabIndex = 7;

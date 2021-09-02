@@ -51,7 +51,7 @@ namespace UI
             // lblFamilia
             // 
             this.lblFamilia.AutoSize = true;
-            this.lblFamilia.Location = new System.Drawing.Point(124, 24);
+            this.lblFamilia.Location = new System.Drawing.Point(109, 24);
             this.lblFamilia.Name = "lblFamilia";
             this.lblFamilia.Size = new System.Drawing.Size(51, 13);
             this.lblFamilia.TabIndex = 56;

@@ -13,7 +13,7 @@ namespace UI
 
         public List<Cliente> ClientesBd { get; set; } = new List<Cliente>();
 
-        public Cliente ClienteSeleccionado { get; set; }
+        public Cliente ClienteSeleccionado { get; set; } = new Cliente();
 
         public bool formUserClose = true;
 
@@ -34,6 +34,7 @@ namespace UI
 
         private void Clientes_Load(object sender, EventArgs e)
         {
+            ClienteSeleccionado = null;
             dgClientes.AutoGenerateColumns = false;
             CargarClientes();
         }
@@ -47,6 +48,7 @@ namespace UI
 
         public Cliente ObtenerClienteSeleccionado()
         {
+            DialogResult = DialogResult.OK;
             return (ClienteSeleccionado != null)
                 ? ClienteSeleccionado
                 : ClienteSeleccionado = (Cliente)dgClientes.CurrentRow.DataBoundItem;
@@ -60,7 +62,7 @@ namespace UI
         private void Clientes_FormClosing(object sender, FormClosingEventArgs e)
         {
             Hide();
-            e.Cancel = true;
+            //e.Cancel = true;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

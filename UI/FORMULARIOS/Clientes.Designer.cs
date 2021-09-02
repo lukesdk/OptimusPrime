@@ -38,82 +38,85 @@ namespace UI
             this.btnSelClie = new System.Windows.Forms.Button();
             this.lblDomicilio = new System.Windows.Forms.Label();
             this.dgClientes = new System.Windows.Forms.DataGridView();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.lblemail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.ClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.lblemail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(456, 53);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevo.BackColor = System.Drawing.Color.Lime;
+            this.btnNuevo.Location = new System.Drawing.Point(456, 32);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(74, 39);
             this.btnNuevo.TabIndex = 1;
             this.btnNuevo.Text = "NUEVO";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(112, 53);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Location = new System.Drawing.Point(112, 60);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(156, 20);
+            this.txtNombre.Size = new System.Drawing.Size(302, 20);
             this.txtNombre.TabIndex = 2;
             // 
             // txtDomicilio
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(112, 90);
-            this.txtDomicilio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDomicilio.Margin = new System.Windows.Forms.Padding(2);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(156, 20);
+            this.txtDomicilio.Size = new System.Drawing.Size(302, 20);
             this.txtDomicilio.TabIndex = 4;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(456, 106);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnModificar.Location = new System.Drawing.Point(456, 85);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(74, 39);
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "MODIFICAR";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(457, 158);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrar.BackColor = System.Drawing.Color.Red;
+            this.btnBorrar.Location = new System.Drawing.Point(457, 137);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(74, 39);
             this.btnBorrar.TabIndex = 6;
             this.btnBorrar.Text = "BORRAR";
-            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // lblNombreCom
             // 
             this.lblNombreCom.AutoSize = true;
-            this.lblNombreCom.Location = new System.Drawing.Point(11, 53);
+            this.lblNombreCom.Location = new System.Drawing.Point(11, 60);
             this.lblNombreCom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreCom.Name = "lblNombreCom";
-            this.lblNombreCom.Size = new System.Drawing.Size(97, 13);
+            this.lblNombreCom.Size = new System.Drawing.Size(55, 13);
             this.lblNombreCom.TabIndex = 7;
-            this.lblNombreCom.Text = "Nombre Completo :";
+            this.lblNombreCom.Text = "CLIENTE:";
             // 
             // btnSelClie
             // 
             this.btnSelClie.Location = new System.Drawing.Point(160, 408);
-            this.btnSelClie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelClie.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelClie.Name = "btnSelClie";
             this.btnSelClie.Size = new System.Drawing.Size(198, 27);
             this.btnSelClie.TabIndex = 9;
@@ -127,9 +130,9 @@ namespace UI
             this.lblDomicilio.Location = new System.Drawing.Point(11, 90);
             this.lblDomicilio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDomicilio.Name = "lblDomicilio";
-            this.lblDomicilio.Size = new System.Drawing.Size(58, 13);
+            this.lblDomicilio.Size = new System.Drawing.Size(68, 13);
             this.lblDomicilio.TabIndex = 10;
-            this.lblDomicilio.Text = "Domicilio : ";
+            this.lblDomicilio.Text = "DOMICILIO: ";
             // 
             // dgClientes
             // 
@@ -145,61 +148,13 @@ namespace UI
             this.Saldo,
             this.Domicilio});
             this.dgClientes.Location = new System.Drawing.Point(10, 217);
-            this.dgClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgClientes.Margin = new System.Windows.Forms.Padding(2);
             this.dgClientes.Name = "dgClientes";
             this.dgClientes.ReadOnly = true;
             this.dgClientes.RowTemplate.Height = 24;
             this.dgClientes.Size = new System.Drawing.Size(520, 182);
             this.dgClientes.TabIndex = 13;
             this.dgClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellClick);
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnVolver.Location = new System.Drawing.Point(10, 10);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(74, 39);
-            this.btnVolver.TabIndex = 14;
-            this.btnVolver.Text = "VOLVER";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // lblemail
-            // 
-            this.lblemail.AutoSize = true;
-            this.lblemail.Location = new System.Drawing.Point(11, 132);
-            this.lblemail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblemail.Name = "lblemail";
-            this.lblemail.Size = new System.Drawing.Size(35, 13);
-            this.lblemail.TabIndex = 16;
-            this.lblemail.Text = "Email:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(112, 129);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(156, 20);
-            this.txtEmail.TabIndex = 15;
-            // 
-            // lblTelefono
-            // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(11, 171);
-            this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(52, 13);
-            this.lblTelefono.TabIndex = 18;
-            this.lblTelefono.Text = "Telefono:";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(112, 168);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(156, 20);
-            this.txtTelefono.TabIndex = 17;
             // 
             // ClienteId
             // 
@@ -241,6 +196,54 @@ namespace UI
             this.Domicilio.ReadOnly = true;
             this.Domicilio.Width = 74;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnVolver.Location = new System.Drawing.Point(10, 10);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(74, 39);
+            this.btnVolver.TabIndex = 14;
+            this.btnVolver.Text = "VOLVER";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // lblemail
+            // 
+            this.lblemail.AutoSize = true;
+            this.lblemail.Location = new System.Drawing.Point(11, 119);
+            this.lblemail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblemail.Name = "lblemail";
+            this.lblemail.Size = new System.Drawing.Size(42, 13);
+            this.lblemail.TabIndex = 16;
+            this.lblemail.Text = "EMAIL:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(112, 119);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(302, 20);
+            this.txtEmail.TabIndex = 15;
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(11, 147);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(67, 13);
+            this.lblTelefono.TabIndex = 18;
+            this.lblTelefono.Text = "TELEFONO:";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(112, 147);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(302, 20);
+            this.txtTelefono.TabIndex = 17;
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,7 +263,7 @@ namespace UI
             this.Controls.Add(this.txtDomicilio);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnNuevo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CLIENTES";

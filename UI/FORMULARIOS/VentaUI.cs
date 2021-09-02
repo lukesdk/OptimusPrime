@@ -156,7 +156,7 @@ namespace UI
         private void btnDetalle_Click(object sender, EventArgs e)
         {
             
-            //MOSTRAR CANTIDAD - PRODUCTO - IMPORTE
+            
 
 
             detalleRefForm.ShowDialog();

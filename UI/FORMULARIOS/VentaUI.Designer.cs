@@ -125,46 +125,50 @@ namespace UI
             // 
             // btnDetalle
             // 
+            this.btnDetalle.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnDetalle.Location = new System.Drawing.Point(557, 11);
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(2);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(97, 41);
             this.btnDetalle.TabIndex = 2;
             this.btnDetalle.Text = "VER DETALLE";
-            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.UseVisualStyleBackColor = false;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // btnAprobar
             // 
+            this.btnAprobar.BackColor = System.Drawing.Color.Yellow;
             this.btnAprobar.Location = new System.Drawing.Point(9, 331);
             this.btnAprobar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAprobar.Name = "btnAprobar";
             this.btnAprobar.Size = new System.Drawing.Size(97, 41);
             this.btnAprobar.TabIndex = 3;
-            this.btnAprobar.Text = "APROBAR VENTA";
-            this.btnAprobar.UseVisualStyleBackColor = true;
+            this.btnAprobar.Text = "APROBAR OPERACION";
+            this.btnAprobar.UseVisualStyleBackColor = false;
             this.btnAprobar.Click += new System.EventHandler(this.btnAprobar_Click);
             // 
             // btnRechazar
             // 
+            this.btnRechazar.BackColor = System.Drawing.Color.Gray;
             this.btnRechazar.Location = new System.Drawing.Point(263, 331);
             this.btnRechazar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRechazar.Name = "btnRechazar";
             this.btnRechazar.Size = new System.Drawing.Size(97, 41);
             this.btnRechazar.TabIndex = 4;
-            this.btnRechazar.Text = "RECHAZAR VENTA";
-            this.btnRechazar.UseVisualStyleBackColor = true;
+            this.btnRechazar.Text = "RECHAZAR OPERACION";
+            this.btnRechazar.UseVisualStyleBackColor = false;
             this.btnRechazar.Click += new System.EventHandler(this.btnRechazar_Click);
             // 
             // bntCancelar
             // 
+            this.bntCancelar.BackColor = System.Drawing.Color.Red;
             this.bntCancelar.Location = new System.Drawing.Point(557, 331);
             this.bntCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.bntCancelar.Name = "bntCancelar";
             this.bntCancelar.Size = new System.Drawing.Size(97, 41);
             this.bntCancelar.TabIndex = 5;
-            this.bntCancelar.Text = "CANCELAR VENTA";
-            this.bntCancelar.UseVisualStyleBackColor = true;
+            this.bntCancelar.Text = "CANCELAR OPERACION";
+            this.bntCancelar.UseVisualStyleBackColor = false;
             this.bntCancelar.Click += new System.EventHandler(this.bntCancelar_Click);
             // 
             // VentaUI

@@ -264,7 +264,7 @@ namespace UI
 
         private void btnQuitarProd_Click(object sender, EventArgs e)
         {
-            ListGrid.Remove(LineaDetalleSeleccionada);
+            ListGrid.Remove(LineaDetalleSeleccionada); 
             RecargarDatagrid();
         }
 

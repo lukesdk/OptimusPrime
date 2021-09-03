@@ -31,17 +31,18 @@ namespace UI
         private void InitializeComponent()
         {
             this.dgVenta = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnDetalle = new System.Windows.Forms.Button();
+            this.btnAprobar = new System.Windows.Forms.Button();
+            this.btnRechazar = new System.Windows.Forms.Button();
+            this.bntCancelar = new System.Windows.Forms.Button();
+            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnDetalle = new System.Windows.Forms.Button();
-            this.btnAprobar = new System.Windows.Forms.Button();
-            this.btnRechazar = new System.Windows.Forms.Button();
-            this.bntCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@ namespace UI
             this.dgVenta.AllowUserToDeleteRows = false;
             this.dgVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdVenta,
             this.Fecha,
             this.Vendedor,
             this.Estado,
@@ -64,10 +66,76 @@ namespace UI
             this.dgVenta.ReadOnly = true;
             this.dgVenta.RowTemplate.Height = 24;
             this.dgVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVenta.Size = new System.Drawing.Size(645, 255);
+            this.dgVenta.Size = new System.Drawing.Size(745, 255);
             this.dgVenta.TabIndex = 0;
             this.dgVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVenta_CellClick);
             this.dgVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVenta_CellContentClick);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Location = new System.Drawing.Point(9, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 41);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "VOLVER";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnDetalle.Location = new System.Drawing.Point(657, 11);
+            this.btnDetalle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(97, 41);
+            this.btnDetalle.TabIndex = 2;
+            this.btnDetalle.Text = "VER DETALLE";
+            this.btnDetalle.UseVisualStyleBackColor = false;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
+            // 
+            // btnAprobar
+            // 
+            this.btnAprobar.BackColor = System.Drawing.Color.Yellow;
+            this.btnAprobar.Location = new System.Drawing.Point(9, 331);
+            this.btnAprobar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAprobar.Name = "btnAprobar";
+            this.btnAprobar.Size = new System.Drawing.Size(97, 41);
+            this.btnAprobar.TabIndex = 3;
+            this.btnAprobar.Text = "APROBAR OPERACION";
+            this.btnAprobar.UseVisualStyleBackColor = false;
+            this.btnAprobar.Click += new System.EventHandler(this.btnAprobar_Click);
+            // 
+            // btnRechazar
+            // 
+            this.btnRechazar.BackColor = System.Drawing.Color.Gray;
+            this.btnRechazar.Location = new System.Drawing.Point(338, 331);
+            this.btnRechazar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRechazar.Name = "btnRechazar";
+            this.btnRechazar.Size = new System.Drawing.Size(97, 41);
+            this.btnRechazar.TabIndex = 4;
+            this.btnRechazar.Text = "RECHAZAR OPERACION";
+            this.btnRechazar.UseVisualStyleBackColor = false;
+            this.btnRechazar.Click += new System.EventHandler(this.btnRechazar_Click);
+            // 
+            // bntCancelar
+            // 
+            this.bntCancelar.BackColor = System.Drawing.Color.Red;
+            this.bntCancelar.Location = new System.Drawing.Point(657, 331);
+            this.bntCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.bntCancelar.Name = "bntCancelar";
+            this.bntCancelar.Size = new System.Drawing.Size(97, 41);
+            this.bntCancelar.TabIndex = 5;
+            this.bntCancelar.Text = "CANCELAR OPERACION";
+            this.bntCancelar.UseVisualStyleBackColor = false;
+            this.bntCancelar.Click += new System.EventHandler(this.bntCancelar_Click);
+            // 
+            // IdVenta
+            // 
+            this.IdVenta.HeaderText = "ID Venta";
+            this.IdVenta.Name = "IdVenta";
+            this.IdVenta.ReadOnly = true;
             // 
             // Fecha
             // 
@@ -111,71 +179,11 @@ namespace UI
             this.Monto.Name = "Monto";
             this.Monto.ReadOnly = true;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Location = new System.Drawing.Point(10, 11);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "VOLVER";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnDetalle
-            // 
-            this.btnDetalle.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnDetalle.Location = new System.Drawing.Point(557, 11);
-            this.btnDetalle.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(97, 41);
-            this.btnDetalle.TabIndex = 2;
-            this.btnDetalle.Text = "VER DETALLE";
-            this.btnDetalle.UseVisualStyleBackColor = false;
-            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
-            // 
-            // btnAprobar
-            // 
-            this.btnAprobar.BackColor = System.Drawing.Color.Yellow;
-            this.btnAprobar.Location = new System.Drawing.Point(9, 331);
-            this.btnAprobar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAprobar.Name = "btnAprobar";
-            this.btnAprobar.Size = new System.Drawing.Size(97, 41);
-            this.btnAprobar.TabIndex = 3;
-            this.btnAprobar.Text = "APROBAR OPERACION";
-            this.btnAprobar.UseVisualStyleBackColor = false;
-            this.btnAprobar.Click += new System.EventHandler(this.btnAprobar_Click);
-            // 
-            // btnRechazar
-            // 
-            this.btnRechazar.BackColor = System.Drawing.Color.Gray;
-            this.btnRechazar.Location = new System.Drawing.Point(263, 331);
-            this.btnRechazar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRechazar.Name = "btnRechazar";
-            this.btnRechazar.Size = new System.Drawing.Size(97, 41);
-            this.btnRechazar.TabIndex = 4;
-            this.btnRechazar.Text = "RECHAZAR OPERACION";
-            this.btnRechazar.UseVisualStyleBackColor = false;
-            this.btnRechazar.Click += new System.EventHandler(this.btnRechazar_Click);
-            // 
-            // bntCancelar
-            // 
-            this.bntCancelar.BackColor = System.Drawing.Color.Red;
-            this.bntCancelar.Location = new System.Drawing.Point(557, 331);
-            this.bntCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.bntCancelar.Name = "bntCancelar";
-            this.bntCancelar.Size = new System.Drawing.Size(97, 41);
-            this.bntCancelar.TabIndex = 5;
-            this.bntCancelar.Text = "CANCELAR OPERACION";
-            this.bntCancelar.UseVisualStyleBackColor = false;
-            this.bntCancelar.Click += new System.EventHandler(this.bntCancelar_Click);
-            // 
             // VentaUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 377);
+            this.ClientSize = new System.Drawing.Size(759, 377);
             this.Controls.Add(this.bntCancelar);
             this.Controls.Add(this.btnRechazar);
             this.Controls.Add(this.btnAprobar);
@@ -197,15 +205,16 @@ namespace UI
 
         private System.Windows.Forms.DataGridView dgVenta;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.Button btnAprobar;
+        private System.Windows.Forms.Button btnRechazar;
+        private System.Windows.Forms.Button bntCancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
-        private System.Windows.Forms.Button btnDetalle;
-        private System.Windows.Forms.Button btnAprobar;
-        private System.Windows.Forms.Button btnRechazar;
-        private System.Windows.Forms.Button bntCancelar;
     }
 }

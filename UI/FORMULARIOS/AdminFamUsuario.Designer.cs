@@ -100,7 +100,7 @@ namespace UI
             // 
             // btnAsignar
             // 
-            this.btnAsignar.Location = new System.Drawing.Point(294, 257);
+            this.btnAsignar.Location = new System.Drawing.Point(288, 257);
             this.btnAsignar.Name = "btnAsignar";
             this.btnAsignar.Size = new System.Drawing.Size(101, 35);
             this.btnAsignar.TabIndex = 63;

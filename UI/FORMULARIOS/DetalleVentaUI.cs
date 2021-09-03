@@ -112,7 +112,7 @@ namespace UI
         private void LimpiarControles()
         {
             txtCant.Text = string.Empty;
-            txtCodProd.Text = string.Empty;
+            txtCodProd.Text += string.Empty;
            
         }
 

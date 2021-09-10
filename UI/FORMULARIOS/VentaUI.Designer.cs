@@ -133,6 +133,7 @@ namespace UI
             // 
             // IdVenta
             // 
+            this.IdVenta.DataPropertyName = "IdVenta";
             this.IdVenta.HeaderText = "ID Venta";
             this.IdVenta.Name = "IdVenta";
             this.IdVenta.ReadOnly = true;

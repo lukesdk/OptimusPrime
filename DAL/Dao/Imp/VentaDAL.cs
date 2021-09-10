@@ -27,6 +27,7 @@
                     queryString,
                     new
                     {
+                        
                         @fecha = objAlta.Fecha,
                         @estado = objAlta.EstadoId,
                         @usuarioId = objAlta.UsuarioId,

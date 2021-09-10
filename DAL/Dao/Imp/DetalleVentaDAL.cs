@@ -49,12 +49,14 @@
                 detalleVenta.Add(
                     new DetalleVenta()
                     {
+                        VentaId= detalle.VentaId,
                         DetalleId = detalle.DetalleId,
-                        VentaId = detalle.VentaId,
+                        
                         LineasDetalle = new List<LineaDetalle>()
                         {
                             new LineaDetalle()
                             {
+                                
                                 Cantidad = detalle.Cantidad,
                                 Importe = detalle.Importe,
                                 Producto = producto ,

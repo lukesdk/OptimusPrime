@@ -1,6 +1,7 @@
 ﻿namespace BE.Entidades
 {
     public class LineaDetalle
+
     {
         public Producto Producto { get; set; }
 

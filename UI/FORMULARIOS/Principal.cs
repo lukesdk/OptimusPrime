@@ -146,7 +146,7 @@ namespace UI
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var confirmation = MessageBox.Show("Esta seguro que desea salir del sistema?", "Salir del sistema", MessageBoxButtons.YesNo);
+            var confirmation = MessageBox.Show("¿Esta seguro que desea salir del sistema?", "Salir del sistema", MessageBoxButtons.YesNo);
             if (confirmation == DialogResult.Yes)
             {
                 Application.Exit();

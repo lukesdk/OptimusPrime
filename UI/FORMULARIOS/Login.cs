@@ -96,7 +96,7 @@ namespace UI
                 }
                 else
                 {
-                    MessageBox.Show("Su usuario no se encuentra activo");
+                    MessageBox.Show("Coloque Usuario y Contraseña");
                 }
             },
             (ex) => MessageBox.Show($"Ocurrio un error por lo siguiente {ex.Message}"));

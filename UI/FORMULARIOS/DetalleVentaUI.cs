@@ -112,8 +112,8 @@ namespace UI
         private void LimpiarControles()
         {
             txtCant.Text = string.Empty;
-            txtCodProd.Text += string.Empty;
-           
+            txtCodProd.Text = string.Empty;
+
         }
 
         private Venta CrearNuevaVenta(int estadoId, DateTime fecha, float monto, int tipoVta, int usuarioId, int clienteId)
@@ -188,60 +188,70 @@ namespace UI
             radioVtaSimple.Enabled = true;
             rbSe.Enabled = true;
 
-            if (MessageBox.Show("       ¿Desea Cancelar la venta?","", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("       ¿Desea Cancelar la venta?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 this.Close();
             }
-            //Alert.ShowSimpleAlert("Venta cancelada", "MSJ038");
-            
-            
-        }
 
+
+            //Alert.ShowSimpleAlert("Venta cancelada", "MSJ038");
+
+
+        }
+        // proceso de aprobar venta
         private void btnFinalizarVenta_Click(object sender, EventArgs e)
         {
-            if (radioVtaSimple.Checked)
+            if (ClienteSeleccionado.ClienteId != 0)
             {
-                ventaBLL.Crear(CrearNuevaVenta(VentaDAL.EstadoVenta.Aprobada.GetHashCode(), DateTime.UtcNow, CalcularMontoTotal(), VentaDAL.TipoVenta.VentaSimple.GetHashCode() , UsuarioActivo.UsuarioId, ClienteSeleccionado.ClienteId));
+                if (radioVtaSimple.Checked)
+                {
+
+                    ventaBLL.Crear(CrearNuevaVenta(VentaDAL.EstadoVenta.Aprobada.GetHashCode(), DateTime.UtcNow, CalcularMontoTotal(), VentaDAL.TipoVenta.VentaSimple.GetHashCode(), UsuarioActivo.UsuarioId, ClienteSeleccionado.ClienteId));
+                }
+
+                if (radioVtaCC.Checked)
+                {
+                    ventaBLL.Crear(CrearNuevaVenta(VentaDAL.EstadoVenta.Pendiente.GetHashCode(), DateTime.UtcNow, CalcularMontoTotal(), VentaDAL.TipoVenta.Cliente.GetHashCode(), UsuarioActivo.UsuarioId, ClienteSeleccionado.ClienteId));
+                }
+
+                if (rbSe.Checked)
+                {
+                    ventaBLL.Crear(CrearNuevaVenta(VentaDAL.EstadoVenta.Pendiente.GetHashCode(), DateTime.UtcNow, CalcularMontoTotal(), VentaDAL.TipoVenta.Seña.GetHashCode(), UsuarioActivo.UsuarioId, ClienteSeleccionado.ClienteId));
+                }
+
+                foreach (var linea in ListGrid)
+                {
+                    DetalleEnGrid = new DetalleVenta() { DetalleId = sqlUtils.GenerarId(campoId, nomEntidad), VentaId = ventaBLL.ObtenerUltimoIdVenta() };
+
+                    DetalleEnGrid.LineasDetalle.Add(linea);
+
+                    detalleVentaBLL.Crear(DetalleEnGrid);
+
+
+                }
+                VaciaListGrid();
+
+                RecargarDatagrid();
+
+                ClienteSeleccionado = null;
+                ProductoSeleccionado = null;
+                txtCant.Text = "";
+                txtCodProd.Text = "";
+                radioVtaCC.Enabled = true;
+                radioVtaSimple.Enabled = true;
+                rbSe.Enabled = true;
+                lblCliente.Text = "";
+
+
+                MessageBox.Show("       Venta Realiza con exito");
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar un Cliente para Proceder con la Venta");
             }
 
-            if (radioVtaCC.Checked)
-            {
-                ventaBLL.Crear(CrearNuevaVenta(VentaDAL.EstadoVenta.Pendiente.GetHashCode(), DateTime.UtcNow, CalcularMontoTotal(), VentaDAL.TipoVenta.Cliente.GetHashCode(), UsuarioActivo.UsuarioId, ClienteSeleccionado.ClienteId));
-            }
-
-            if (rbSe.Checked)
-            {
-                ventaBLL.Crear(CrearNuevaVenta(VentaDAL.EstadoVenta.Pendiente.GetHashCode(), DateTime.UtcNow, CalcularMontoTotal(), VentaDAL.TipoVenta.Seña.GetHashCode(), UsuarioActivo.UsuarioId, ClienteSeleccionado.ClienteId));
-            }
-            
-            foreach (var linea in ListGrid)
-            {
-                DetalleEnGrid = new DetalleVenta() { DetalleId = sqlUtils.GenerarId(campoId, nomEntidad), VentaId = ventaBLL.ObtenerUltimoIdVenta() };
-
-                DetalleEnGrid.LineasDetalle.Add(linea);
-
-                detalleVentaBLL.Crear(DetalleEnGrid);
-
-                
-            }
             //Alert.ShowSimpleAlert( "MSJ086", "Venta realizada con exito");
-            
-           
-            VaciaListGrid();
 
-            RecargarDatagrid();
-
-            ClienteSeleccionado = null;
-            ProductoSeleccionado = null;
-            txtCant.Text = "";
-            txtCodProd.Text = "";
-            radioVtaCC.Enabled = true;
-            radioVtaSimple.Enabled = true;
-            rbSe.Enabled = true;
-            lblCliente.Text = "";
-
-
-            MessageBox.Show("       Venta Realiza con exito");
         }
 
         private void VaciaListGrid()
@@ -264,7 +274,7 @@ namespace UI
 
         private void btnQuitarProd_Click(object sender, EventArgs e)
         {
-            ListGrid.Remove(LineaDetalleSeleccionada); 
+            ListGrid.Remove(LineaDetalleSeleccionada);
             RecargarDatagrid();
         }
 

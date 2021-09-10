@@ -83,6 +83,16 @@ namespace UI
                 digitoVerificador.ActualizarDVVertical(digitoVerificador.Entidades.Find(x => x == entidad));
 
                 MessageBox.Show("Usuario actualizado");
+                lblNombre.Text = lblNombre.Text + UsuarioActivo.Nombre;
+                lblApellido.Text = lblApellido.Text + UsuarioActivo.Apellido;
+                lblDireccion.Text = lblDireccion.Text + UsuarioActivo.Domicilio;               
+                lblTelefono.Text = lblTelefono.Text + UsuarioActivo.Telefono;
+
+                txtNombre.Visible = false;
+                txtApellido.Visible = false;
+                txtDireccion.Visible = false;
+                txtTel.Visible = false;
+
             }
         }
 
@@ -139,10 +149,17 @@ namespace UI
 
         private void btnCambiarDatos_Click(object sender, System.EventArgs e)
         {
+
+            lblNombre.Text = "Nombre: ";
+            lblApellido.Text = "Apellido: ";
+            lblDireccion.Text = "Direccion: ";
+            lblTelefono.Text = "Telefono: ";
+            
             txtNombre.Visible = true;
             txtApellido.Visible = true;
             txtDireccion.Visible = true;
             txtTel.Visible = true;
+
 
             txtNombre.Text = UsuarioActivo.Nombre;
             txtApellido.Text = UsuarioActivo.Apellido;

@@ -58,14 +58,14 @@ namespace UI
             // nuevaVenta
             // 
             this.nuevaVenta.Name = "nuevaVenta";
-            this.nuevaVenta.Size = new System.Drawing.Size(164, 22);
+            this.nuevaVenta.Size = new System.Drawing.Size(180, 22);
             this.nuevaVenta.Text = "REALIZAR VENTA";
             this.nuevaVenta.Click += new System.EventHandler(this.nuevaVenta_Click);
             // 
             // verVentasToolStripMenuItem
             // 
             this.verVentasToolStripMenuItem.Name = "verVentasToolStripMenuItem";
-            this.verVentasToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.verVentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verVentasToolStripMenuItem.Text = "VER VENTAS";
             this.verVentasToolStripMenuItem.Click += new System.EventHandler(this.verVentasToolStripMenuItem_Click);
             // 
@@ -74,9 +74,9 @@ namespace UI
             this.administradorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuariosToolStripMenuItem,
             this.bitacoraToolStripMenuItem,
+            this.familiasToolStripMenuItem,
             this.backUpToolStripMenuItem,
-            this.restoreToolStripMenuItem,
-            this.familiasToolStripMenuItem});
+            this.restoreToolStripMenuItem});
             this.administradorToolStripMenuItem.Name = "administradorToolStripMenuItem";
             this.administradorToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
             this.administradorToolStripMenuItem.Text = "ADMINISTRADOR";

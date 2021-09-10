@@ -48,7 +48,7 @@ namespace UI
 
         public Cliente ObtenerClienteSeleccionado()
         {
-            DialogResult = DialogResult.OK;
+            //DialogResult = DialogResult.OK;
             return (ClienteSeleccionado != null)
                 ? ClienteSeleccionado
                 : ClienteSeleccionado = (Cliente)dgClientes.CurrentRow.DataBoundItem;

@@ -93,6 +93,7 @@ namespace UI
                 txtDireccion.Visible = false;
                 txtTel.Visible = false;
 
+                this.Close();
             }
         }
 

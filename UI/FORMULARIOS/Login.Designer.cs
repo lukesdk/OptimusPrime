@@ -71,6 +71,7 @@ namespace UI
             this.txt_user.Name = "txt_user";
             this.txt_user.Size = new System.Drawing.Size(273, 20);
             this.txt_user.TabIndex = 2;
+            this.txt_user.TextChanged += new System.EventHandler(this.txt_user_TextChanged);
             // 
             // txt_contraseña
             // 

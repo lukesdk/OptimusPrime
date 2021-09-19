@@ -3,6 +3,9 @@
     using BE;
     using BE.Entidades;
 
+
+    //Declarar los metodos de la interfaz
+
     public interface IVentaDAL : ICRUD<Venta>
     {
         int ObtenerUltimoIdVenta();

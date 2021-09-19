@@ -71,7 +71,7 @@ namespace UI
             {
                 var usuario = txt_user.Text;
                 var contraseña = txt_contraseña.Text;
-                ////admin123
+                ////lucas_matalima@hotmail.com pw: salom645
 
                 if (usuarioBLL.ObtenerUsuarioConEmail(usuario).Activo)
                 {
@@ -96,7 +96,7 @@ namespace UI
                 }
                 else
                 {
-                    MessageBox.Show("Coloque Usuario y Contraseña");
+                    MessageBox.Show("Coloque Usuario y Contraseña", "Ingresar al Sistema");
                 }
             },
             (ex) => MessageBox.Show($"Ocurrio un error por lo siguiente {ex.Message}"));
@@ -113,13 +113,22 @@ namespace UI
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
-            if (Alert.ConfirmationMessage("MSJ037", "¿Seguro que desea salir?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                this.Close();
+           if (MessageBox.Show("¿Seguro que desea salir?", "Salir del Sistema", MessageBoxButtons.YesNo) == DialogResult.Yes)
+           {
+               this.Close();
             }
+           //if (Alert.ConfirmationMessage("MSJ037", "¿Seguro que desea salir?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //{
+              //this.Close();
+            //}
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_user_TextChanged(object sender, EventArgs e)
         {
 
         }

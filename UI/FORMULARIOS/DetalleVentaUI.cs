@@ -88,12 +88,14 @@ namespace UI
                     }
                     else
                     {
-                        Alert.ShowSimpleAlert("El codigo de producto no existe", "MSJ080");
+                        MessageBox.Show("El codigo de producto no existe", "Seleccionar Codigo Producto");
+                        
                     }
                 }
                 else
                 {
-                    Alert.ShowSimpleAlert("Debe Seleccionar al menos un producto y la cantidad", "MSJ082");
+                    MessageBox.Show("Debe seleccionar al menos un producto y la cantidad", "Seleccionar producto");
+                    
                 }
             }
         }
@@ -173,25 +175,29 @@ namespace UI
             Hide();
             e.Cancel = true;
         }
-
+        //Cancelar Venta
         private void btnCancelarVta_Click(object sender, EventArgs e)
         {
-            VaciaListGrid();
 
-            RecargarDatagrid();
-
-            ClienteSeleccionado = null;
-            ProductoSeleccionado = null;
-            txtCant.Text = "";
-            txtCodProd.Text = "";
-            radioVtaCC.Enabled = true;
-            radioVtaSimple.Enabled = true;
-            rbSe.Enabled = true;
-
-            if (MessageBox.Show("       ¿Desea Cancelar la venta?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("       ¿Desea Cancelar la venta?", "Cancelar Venta", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                this.Close();
+                VaciaListGrid();
+
+                RecargarDatagrid();
+
+                ClienteSeleccionado = null;
+                ProductoSeleccionado = null;
+                txtCant.Text = "";
+                txtCodProd.Text = "";
+                radioVtaCC.Enabled = true;
+                radioVtaSimple.Enabled = true;
+                rbSe.Enabled = true;
+
+                //this.Close();
             }
+            
+
+         
 
 
             //Alert.ShowSimpleAlert("Venta cancelada", "MSJ038");
@@ -243,14 +249,14 @@ namespace UI
                 lblCliente.Text = "";
 
 
-                MessageBox.Show("       Venta Realiza con exito");
+                MessageBox.Show("       Venta Realiza con exito","Finalizar Venta");
             }
             else
             {
-                MessageBox.Show("Debe Seleccionar un Cliente para Proceder con la Venta");
+                MessageBox.Show("Debe Seleccionar un Cliente para Proceder con la Venta","Aprobar Venta");
             }
 
-            //Alert.ShowSimpleAlert( "MSJ086", "Venta realizada con exito");
+            
 
         }
 

@@ -36,7 +36,7 @@ namespace UI
             this.btnAprobar = new System.Windows.Forms.Button();
             this.btnRechazar = new System.Windows.Forms.Button();
             this.bntCancelar = new System.Windows.Forms.Button();
-            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VentaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +52,7 @@ namespace UI
             this.dgVenta.AllowUserToDeleteRows = false;
             this.dgVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdVenta,
+            this.VentaId,
             this.Fecha,
             this.Vendedor,
             this.Estado,
@@ -131,12 +131,12 @@ namespace UI
             this.bntCancelar.UseVisualStyleBackColor = false;
             this.bntCancelar.Click += new System.EventHandler(this.bntCancelar_Click);
             // 
-            // IdVenta
+            // VentaId
             // 
-            this.IdVenta.DataPropertyName = "IdVenta";
-            this.IdVenta.HeaderText = "ID Venta";
-            this.IdVenta.Name = "IdVenta";
-            this.IdVenta.ReadOnly = true;
+            this.VentaId.DataPropertyName = "VentaId";
+            this.VentaId.HeaderText = "ID Venta";
+            this.VentaId.Name = "VentaId";
+            this.VentaId.ReadOnly = true;
             // 
             // Fecha
             // 
@@ -210,7 +210,7 @@ namespace UI
         private System.Windows.Forms.Button btnAprobar;
         private System.Windows.Forms.Button btnRechazar;
         private System.Windows.Forms.Button bntCancelar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VentaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;

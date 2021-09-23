@@ -2,6 +2,9 @@
 {
     using System.Collections.Generic;
 
+
+    //Declarar los metodos de la interfaz
+
     public interface IDigitoVerificador
     {
         List<string> Entidades { get; set; }

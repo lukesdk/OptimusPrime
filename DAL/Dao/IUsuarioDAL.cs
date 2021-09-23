@@ -4,6 +4,9 @@
     using BE.Entidades;
     using System.Collections.Generic;
 
+
+    //Declarar los metodos de la interfaz
+
     public interface IUsuarioDAL : ICRUD<Usuario>
     {
         bool LogIn(string email, string contraseña);

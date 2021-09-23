@@ -5,6 +5,8 @@
     using System;
     using System.Collections.Generic;
 
+
+    //Declarar los metodos de la interfaz
     public interface IBitacoraDAL
     {
         void FiltrarBitacora(FiltrosBitacora filtros);

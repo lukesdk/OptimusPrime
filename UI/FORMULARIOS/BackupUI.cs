@@ -48,7 +48,7 @@ namespace UI
                 }
                 else
                 {
-                    MessageBox.Show("Debe seleccionar un path para la ubicacion del archivo backup y setear una descripción");
+                    MessageBox.Show("Ingresar descripción y seleccionar una ruta para Realizar la copia de seguridad.", "Realizar Copia de Seguridad");
                 }
             }
             catch (Exception ex)
@@ -78,6 +78,7 @@ namespace UI
 
             lblProgreso.Invoke((MethodInvoker)delegate
             {
+                
                 lblProgreso.Text = $"{e.Percent}%";
             });
         }

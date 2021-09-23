@@ -50,7 +50,7 @@ namespace UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error - Debe Seleccionar el archivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -87,11 +87,11 @@ namespace UI
 
                     else if (usuarioBLL.ObtenerUsuarioConEmail(usuario).ContadorIngresosIncorrectos < 3)
                     {
-                        MessageBox.Show("Login Incorrecto");
+                        MessageBox.Show("Login Incorrecto","Ingresar al Sistema");
                     }
                     else
                     {
-                        MessageBox.Show("Cuenta bloqueada contacte a su administrador");
+                        MessageBox.Show("Cuenta bloqueada contacte a su administrador","Ingresar al Sistema");
                     }
                 }
                 else

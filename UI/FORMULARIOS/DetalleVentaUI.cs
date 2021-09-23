@@ -200,7 +200,7 @@ namespace UI
          
 
 
-            //Alert.ShowSimpleAlert("Venta cancelada", "MSJ038");
+            
 
 
         }
@@ -225,7 +225,22 @@ namespace UI
                     ventaBLL.Crear(CrearNuevaVenta(VentaDAL.EstadoVenta.Pendiente.GetHashCode(), DateTime.UtcNow, CalcularMontoTotal(), VentaDAL.TipoVenta.Seña.GetHashCode(), UsuarioActivo.UsuarioId, ClienteSeleccionado.ClienteId));
                 }
 
-                foreach (var linea in ListGrid)
+                if (ProductoSeleccionado.ProductoId != 0)
+                {
+                    ClienteSeleccionado = null;
+                    ProductoSeleccionado = null;
+                    txtCant.Text = "";
+                    txtCodProd.Text = "";
+                    radioVtaCC.Enabled = true;
+                    radioVtaSimple.Enabled = true;
+                    rbSe.Enabled = true;
+                    lblCliente.Text = "";
+
+
+                    
+
+
+                    foreach (var linea in ListGrid)
                 {
                     DetalleEnGrid = new DetalleVenta() { DetalleId = sqlUtils.GenerarId(campoId, nomEntidad), VentaId = ventaBLL.ObtenerUltimoIdVenta() };
 
@@ -239,17 +254,14 @@ namespace UI
 
                 RecargarDatagrid();
 
-                ClienteSeleccionado = null;
-                ProductoSeleccionado = null;
-                txtCant.Text = "";
-                txtCodProd.Text = "";
-                radioVtaCC.Enabled = true;
-                radioVtaSimple.Enabled = true;
-                rbSe.Enabled = true;
-                lblCliente.Text = "";
+                 MessageBox.Show("       Venta Realiza con exito", "Finalizar Venta");
 
-
-                MessageBox.Show("       Venta Realiza con exito","Finalizar Venta");
+                }
+                else
+                {
+                    MessageBox.Show("Debe Seleccionar un producto y su codigo para continuar con la venta", "Generar Venta");
+                }
+                
             }
             else
             {

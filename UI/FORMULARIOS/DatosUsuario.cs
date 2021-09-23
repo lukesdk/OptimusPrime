@@ -64,12 +64,12 @@ namespace UI
                         if (cambioExitoso)
                         {
                             //Log.Info("Password Actualizado");
-                            MessageBox.Show("Su contraseña fue actualizada");
+                            MessageBox.Show("Su contraseña fue actualizada","Actualizacion de Contraseña");
                         }
                         else
                         {
                             //Log.Info("Fallo la actualizacion del password");
-                            MessageBox.Show("Error contraseña no actualizada");
+                            MessageBox.Show("Error contraseña no actualizada", "Actualizacion de Contraseña");
                         }
                     }
 
@@ -82,7 +82,7 @@ namespace UI
 
                 digitoVerificador.ActualizarDVVertical(digitoVerificador.Entidades.Find(x => x == entidad));
 
-                MessageBox.Show("Usuario actualizado");
+                MessageBox.Show("Usuario actualizado", "Actualizacion de Contraseña");
                 lblNombre.Text = lblNombre.Text + UsuarioActivo.Nombre;
                 lblApellido.Text = lblApellido.Text + UsuarioActivo.Apellido;
                 lblDireccion.Text = lblDireccion.Text + UsuarioActivo.Domicilio;               
@@ -105,7 +105,7 @@ namespace UI
             {
                 if (string.IsNullOrEmpty(tb.Text.Trim()))
                 {
-                    MessageBox.Show("Todos los datos deben estar completos");
+                    MessageBox.Show("Todos los datos deben estar completos", "Actualizacion de Contraseña");
                     Log4netExtensions.Baja(log, "Todos los datos deben estar completos");
                     returnValue = false;
                     break;

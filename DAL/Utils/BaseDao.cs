@@ -5,6 +5,8 @@
     using System;
     using System.Collections.Generic;
 
+
+    //conexion a la base de datos
     public abstract class BaseDao
     {
         private readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);

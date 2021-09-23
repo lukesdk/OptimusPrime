@@ -49,9 +49,9 @@ namespace UI
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 39;
-            this.label3.Text = "Ingrese nombre:";
+            this.label3.Text = "NOMBRE:";
             // 
             // txtNombre
             // 
@@ -95,9 +95,9 @@ namespace UI
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 34;
-            this.label2.Text = "Cantidad:";
+            this.label2.Text = "CANTIDAD:";
             // 
             // label1
             // 
@@ -132,9 +132,9 @@ namespace UI
             this.chkDividir.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkDividir.Location = new System.Drawing.Point(3, 87);
             this.chkDividir.Name = "chkDividir";
-            this.chkDividir.Size = new System.Drawing.Size(112, 17);
+            this.chkDividir.Size = new System.Drawing.Size(139, 17);
             this.chkDividir.TabIndex = 40;
-            this.chkDividir.Text = "Dividir volumenes:";
+            this.chkDividir.Text = "DIVIDIR VOLUMENES:";
             this.chkDividir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkDividir.UseVisualStyleBackColor = true;
             this.chkDividir.CheckedChanged += new System.EventHandler(this.chkDividir_CheckedChanged);

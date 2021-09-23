@@ -7,6 +7,8 @@
     using System.Data.SqlClient;
     using System.Linq;
 
+
+    //conexion a la base de datos
     public class SqlUtils : BaseDao
     {
         ////private static log4net.ILog log;

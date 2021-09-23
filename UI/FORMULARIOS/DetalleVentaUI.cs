@@ -89,13 +89,13 @@ namespace UI
                     else
                     {
                         MessageBox.Show("El codigo de producto no existe", "Seleccionar Codigo Producto");
-                        
+
                     }
                 }
                 else
                 {
                     MessageBox.Show("Debe seleccionar al menos un producto y la cantidad", "Seleccionar producto");
-                    
+
                 }
             }
         }
@@ -195,12 +195,12 @@ namespace UI
 
                 //this.Close();
             }
-            
-
-         
 
 
-            
+
+
+
+
 
 
         }
@@ -225,7 +225,7 @@ namespace UI
                     ventaBLL.Crear(CrearNuevaVenta(VentaDAL.EstadoVenta.Pendiente.GetHashCode(), DateTime.UtcNow, CalcularMontoTotal(), VentaDAL.TipoVenta.Seña.GetHashCode(), UsuarioActivo.UsuarioId, ClienteSeleccionado.ClienteId));
                 }
 
-                if (ProductoSeleccionado.ProductoId != 0)
+                if (ProductoSeleccionado.ProductoId != 0 && ProductoSeleccionado.Stock != 0)
                 {
                     ClienteSeleccionado = null;
                     ProductoSeleccionado = null;
@@ -237,38 +237,38 @@ namespace UI
                     lblCliente.Text = "";
 
 
-                    
+
 
 
                     foreach (var linea in ListGrid)
-                {
-                    DetalleEnGrid = new DetalleVenta() { DetalleId = sqlUtils.GenerarId(campoId, nomEntidad), VentaId = ventaBLL.ObtenerUltimoIdVenta() };
+                    {
+                        DetalleEnGrid = new DetalleVenta() { DetalleId = sqlUtils.GenerarId(campoId, nomEntidad), VentaId = ventaBLL.ObtenerUltimoIdVenta() };
 
-                    DetalleEnGrid.LineasDetalle.Add(linea);
+                        DetalleEnGrid.LineasDetalle.Add(linea);
 
-                    detalleVentaBLL.Crear(DetalleEnGrid);
+                        detalleVentaBLL.Crear(DetalleEnGrid);
 
 
-                }
-                VaciaListGrid();
+                    }
+                    VaciaListGrid();
 
-                RecargarDatagrid();
+                    RecargarDatagrid();
 
-                 MessageBox.Show("       Venta Realiza con exito", "Finalizar Venta");
+                    MessageBox.Show("       Venta Realiza con exito", "Finalizar Venta");
 
                 }
                 else
                 {
                     MessageBox.Show("Debe Seleccionar un producto y su codigo para continuar con la venta", "Generar Venta");
                 }
-                
+
             }
             else
             {
-                MessageBox.Show("Debe Seleccionar un Cliente para Proceder con la Venta","Aprobar Venta");
+                MessageBox.Show("Debe Seleccionar un Cliente para Proceder con la Venta", "Aprobar Venta");
             }
 
-            
+
 
         }
 

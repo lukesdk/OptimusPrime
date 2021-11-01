@@ -101,7 +101,7 @@ namespace UI
                 VentaSeleccionada = CrearVenta(LineaSeleccionada.Estado);
             }
         }
-
+        //boton para Aprobar la Operacion de la venta.
         private void btnAprobar_Click(object sender, EventArgs e)
         {
             var venta = CrearVenta("Aprobada");
@@ -112,7 +112,7 @@ namespace UI
 
             CargarGrid();
         }
-
+        // boton para Rechazar la operacion de la Venta
         private void btnRechazar_Click(object sender, EventArgs e)
         {
             var venta = CrearVenta("Rechazada");
@@ -123,7 +123,7 @@ namespace UI
 
             CargarGrid();
         }
-
+        //boton para cancelar la operacion de la Venta.
         private void bntCancelar_Click(object sender, EventArgs e)
         {
             var venta = CrearVenta("Cancelada");
@@ -152,7 +152,7 @@ namespace UI
 
             return cliente;
         }
-
+        //boton para ver el detalle de las ventas.
         private void btnDetalle_Click(object sender, EventArgs e)
         {
             

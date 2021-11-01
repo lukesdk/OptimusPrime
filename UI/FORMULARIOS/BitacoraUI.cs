@@ -30,6 +30,7 @@ namespace UI
             FillCheckedList();
             this.rpv1.RefreshReport();
             this.rpv1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
         }
 
         private void btn_volver_Click(object sender, EventArgs e)
@@ -49,7 +50,7 @@ namespace UI
                 }
             }
         }
-
+        //BOTON PARA FILTRAR LA BITACORA.
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
             var fechaDesde = dateTimePicker1.Value;

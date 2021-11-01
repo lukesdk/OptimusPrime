@@ -31,7 +31,7 @@ namespace UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ModeloBitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -154,9 +154,9 @@ namespace UI
             // rpv1
             // 
             this.rpv1.AutoSize = true;
-            reportDataSource1.Name = "DS_Bitacora";
-            reportDataSource1.Value = this.ModeloBitacoraBindingSource;
-            this.rpv1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "DS_Bitacora";
+            reportDataSource3.Value = this.ModeloBitacoraBindingSource;
+            this.rpv1.LocalReport.DataSources.Add(reportDataSource3);
             this.rpv1.LocalReport.ReportEmbeddedResource = "UI.Reporte.Bitacora.rdlc";
             this.rpv1.Location = new System.Drawing.Point(12, 305);
             this.rpv1.Name = "rpv1";

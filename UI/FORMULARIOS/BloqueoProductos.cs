@@ -25,7 +25,7 @@ namespace UI
             lstActivos.DataSource =  productoBLL.Cargar().Select(x => x.ProductoId + " - " + x.Descripcion).ToList();
             lstInactivos.DataSource = productoBLL.CargarInactivos().Select(x => x.ProductoId + " - " + x.Descripcion).ToList(); ;
         }
-
+        //ACTIVAR PRODUCTOS INACTIVOS.
         private void btnActivar_Click_1(object sender, EventArgs e)
         {
             if (lstInactivos.Items.Count > 0)
@@ -38,7 +38,7 @@ namespace UI
                 }
             }
         }
-
+        //INHABILITAR PRODUCTOS SIN STOCK.
         private void btnDesactivar_Click(object sender, EventArgs e)
         {
             if (lstActivos.Items.Count > 0)

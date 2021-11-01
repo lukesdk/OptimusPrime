@@ -156,7 +156,7 @@ namespace UI
             Hide();
             e.Cancel = true;
         }
-
+        //boton para modificar Patente-Familia
         private void btnModificar_Click(object sender, EventArgs e)
         {
             checkeadapat = false;

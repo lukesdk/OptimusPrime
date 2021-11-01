@@ -61,7 +61,7 @@ namespace UI
 
             traductor.Traduccir(this, nomEntidad);
         }
-
+        //BOTON PARA AGREGAR PRODUCTOS.
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             if (ProductoSeleccionado.ProductoId != 0 && !string.IsNullOrEmpty(txtCant.Text))
@@ -141,7 +141,7 @@ namespace UI
         {
             this.Hide();
         }
-
+        //BOTON SELECCIONAR CLIENTE
         private void btnSelCliente_Click(object sender, EventArgs e)
         {
             var resultado = cliente.ShowDialog();
@@ -158,7 +158,7 @@ namespace UI
                 radioVtaCC.Enabled = false;
             }
         }
-
+        //BOTON PARA LISTAR LOS PRODUCTOS PARA REALIZAR LAS VENTAS.
         private void btnListaProd_Click(object sender, EventArgs e)
         {
             var resultado = productos.ShowDialog();
@@ -196,15 +196,8 @@ namespace UI
                 //this.Close();
             }
 
-
-
-
-
-
-
-
         }
-        // proceso de aprobar venta
+        // proceso de FINALIZAR venta
         private void btnFinalizarVenta_Click(object sender, EventArgs e)
         {
             if (ClienteSeleccionado.ClienteId != 0)
@@ -289,7 +282,7 @@ namespace UI
 
             return total;
         }
-
+        //BOTON PARA QUITAR PRODUCTOS
         private void btnQuitarProd_Click(object sender, EventArgs e)
         {
             ListGrid.Remove(LineaDetalleSeleccionada);

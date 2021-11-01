@@ -114,7 +114,7 @@ namespace UI
 
             this.Hide();
         }
-
+        //boton para quitar familia a un usuario.
         private void btnQuitar_Click(object sender, EventArgs e)
         {
             ActualizarSeleccionado();
@@ -139,7 +139,7 @@ namespace UI
 
             CargarListas();
         }
-
+        //boton para asignar familia al usuario.
         private void btnAsignar_Click(object sender, EventArgs e)
         {
             ActualizarSeleccionado();

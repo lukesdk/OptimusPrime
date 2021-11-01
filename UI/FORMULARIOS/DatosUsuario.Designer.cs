@@ -62,7 +62,7 @@ namespace UI
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(50, 13);
             this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombre :";
+            this.lblNombre.Text = "Nombre: ";
             this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // lblApellido
@@ -72,34 +72,34 @@ namespace UI
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(50, 13);
             this.lblApellido.TabIndex = 2;
-            this.lblApellido.Text = "Apellido :";
+            this.lblApellido.Text = "Apellido: ";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(12, 58);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.Size = new System.Drawing.Size(38, 13);
             this.lblEmail.TabIndex = 3;
-            this.lblEmail.Text = "Email:";
+            this.lblEmail.Text = "Email: ";
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Location = new System.Drawing.Point(9, 148);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(55, 13);
+            this.lblDireccion.Size = new System.Drawing.Size(58, 13);
             this.lblDireccion.TabIndex = 4;
-            this.lblDireccion.Text = "Direccion:";
+            this.lblDireccion.Text = "Direccion: ";
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Location = new System.Drawing.Point(9, 173);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(52, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(55, 13);
             this.lblTelefono.TabIndex = 6;
-            this.lblTelefono.Text = "Telefono:";
+            this.lblTelefono.Text = "Telefono: ";
             // 
             // btnActualizar
             // 

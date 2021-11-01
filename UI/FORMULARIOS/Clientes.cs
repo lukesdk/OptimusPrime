@@ -26,7 +26,7 @@ namespace UI
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-
+        //SELECCIONAMOS AL CLIENTE PARA VENDERLE
         private void btnSelClie_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
@@ -64,7 +64,7 @@ namespace UI
             Hide();
             //e.Cancel = true;
         }
-
+        //DAR DE ALTA A UN CLIENTE.
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             var exito = clienteBLL.Crear(new Cliente() { NombreCompleto = txtNombre.Text, Domicilio = txtDomicilio.Text, Email = txtEmail.Text, Telefono = txtTelefono.Text, Activo = true });
@@ -76,7 +76,7 @@ namespace UI
                 MessageBox.Show("Cliente Creado");
             }
         }
-
+        // MODIFICAR UN CLIENTE
         private void btnModificar_Click(object sender, EventArgs e)
         {
             var exito = clienteBLL.Actualizar(new Cliente() { ClienteId = ClienteSeleccionado.ClienteId, NombreCompleto = txtNombre.Text, Domicilio = txtDomicilio.Text, Email = txtEmail.Text, Telefono = txtTelefono.Text, Activo = true });
@@ -95,7 +95,7 @@ namespace UI
             ObtenerClienteSeleccionado();
             CargaControles();
         }
-
+        //BORRAR UN CLIENTE.
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             var exito = clienteBLL.Borrar(ClienteSeleccionado);

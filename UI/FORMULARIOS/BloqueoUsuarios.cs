@@ -31,7 +31,7 @@ namespace UI
             DialogResult = DialogResult.OK;
             e.Cancel = true;
         }
-
+        //ACTIVAR USUARIOS INACTIVOS.
         private void btnActivar_Click(object sender, EventArgs e)
         {
             if (lstInactivos.Items.Count > 0)
@@ -43,7 +43,7 @@ namespace UI
                 }
             }
         }
-
+        //DESACTIVAR USUARIOS PARA PONERLOS INACTIVOS.
         private void btnDesactivar_Click(object sender, EventArgs e)
         {
             if (lstActivos.Items.Count > 0)
@@ -65,6 +65,11 @@ namespace UI
         private void BloqueoUsuario_Enter(object sender, EventArgs e)
         {
             CargarUsuarios();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

@@ -134,6 +134,7 @@ namespace UI
             this.Controls.Add(this.btnRestaurar);
             this.Controls.Add(this.Label1);
             this.Name = "RestoreUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RESTAURAR COPIA DE SEGURIDAD";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RestoreUI_FormClosing);
             this.Load += new System.EventHandler(this.RestoreUI_Load);

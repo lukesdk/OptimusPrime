@@ -195,6 +195,7 @@ namespace UI
             this.Controls.Add(this.txtDirectorio);
             this.Controls.Add(this.btnAceptar);
             this.Name = "BackupUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COPIA DE SEGURIDAD";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BackupUI_FormClosing);
             this.Load += new System.EventHandler(this.Backup_Load);

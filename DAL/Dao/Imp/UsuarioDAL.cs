@@ -9,6 +9,7 @@
 
     public class UsuarioDAL : BaseDao, ICRUD<Usuario>, IUsuarioDAL
     {
+        //llave para encriptar y desencriptar.
         public const string Key = "bZr2URKx";
         public const string Iv = "HNtgQw0w";
 
@@ -25,12 +26,16 @@
 
         public bool Crear(Usuario objAlta)
         {
+            //encripta mail y contraseña.
+            //hash irreversible.
             var contEncript = MD5.ComputeMD5Hash(new Random().Next().ToString());
+            //encriptar con Key e Iv
             var emailEncript = DES.Encrypt(objAlta.Email, Key, Iv);
 
             objAlta.UsuarioId = ObtenerUltimoIdUsuario() + 1;
             var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { objAlta.Nombre, emailEncript, contEncript }, new List<int> { objAlta.UsuarioId });
 
+            //evitar sqlinjection @.
             var queryString = "INSERT INTO Usuario(Nombre, Apellido, Contraseña, Email, Telefono, Domicilio, ContadorIngresosIncorrectos, " +
                 "IdCanalVenta, IdIdioma, PrimerLogin, DVH, Activo) " +
                 "VALUES (@nombre, @apellido, @contraseña, @email, @telefono, @domicilio, @contadorIngresos, @idCanalVenta, @idIdioma, " +

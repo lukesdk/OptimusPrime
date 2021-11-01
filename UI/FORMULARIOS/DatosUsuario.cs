@@ -32,18 +32,20 @@ namespace UI
             this.usuarioDAL = usuarioDAL;
             InitializeComponent();
         }
-
+        //CARGAMOS LA INFO DEL USUARIO.
         private void DatosUsuario_Load(object sender, System.EventArgs e)
         {
-            UsuarioActivo = formControl.ObtenerInfoUsuario();
+            UsuarioActivo =  formControl.ObtenerInfoUsuario();
 
-            lblNombre.Text = lblNombre.Text + UsuarioActivo.Nombre;
-            lblApellido.Text = lblApellido.Text + UsuarioActivo.Apellido;
-            lblDireccion.Text = lblDireccion.Text + UsuarioActivo.Domicilio;
-            lblEmail.Text = lblEmail.Text + DES.Decrypt(UsuarioActivo.Email, key, iv);
-            lblTelefono.Text = lblTelefono.Text + UsuarioActivo.Telefono;
+            lblNombre.Text =  lblNombre.Text + UsuarioActivo.Nombre;
+            lblApellido.Text =  lblApellido.Text + UsuarioActivo.Apellido;
+            lblDireccion.Text =  lblDireccion.Text + UsuarioActivo.Domicilio;
+            lblEmail.Text =  lblEmail.Text + DES.Decrypt(UsuarioActivo.Email, key, iv);
+            lblTelefono.Text =  lblTelefono.Text + UsuarioActivo.Telefono;
             chkCont.Enabled = false;
         }
+        
+        //BOTON PARA ACTUALIZAR LOS DATOS INGRESADOS DEL USUARIO.
 
         private void btnActualizar_Click(object sender, System.EventArgs e)
         {
@@ -115,7 +117,7 @@ namespace UI
                 {
                     if (!Regex.IsMatch(tb.Text, @"[a-zA-Z]"))
                     {
-                        MessageBox.Show("El campo nombre no acepta numeros");
+                        MessageBox.Show("El campo nombre no acepta numeros","Actualizacion Datos Personales");
                         returnValue = false;
                     }
                 }
@@ -124,7 +126,7 @@ namespace UI
                 {
                     if (!Regex.IsMatch(tb.Text, @"[a-zA-Z]"))
                     {
-                        MessageBox.Show("El campo apellido no acepta numeros");
+                        MessageBox.Show("El campo apellido no acepta numeros", "Actualizacion Datos Personales");
                         returnValue = false;
                     }
                 }
@@ -133,7 +135,7 @@ namespace UI
                 {
                     if (Regex.IsMatch(tb.Text, @"[a-zA-Z]"))
                     {
-                        MessageBox.Show("no puede ingresar letras");
+                        MessageBox.Show("no puede ingresar letras", "Actualizacion Datos Personales");
                         returnValue = false;
                     }
                 }
@@ -147,7 +149,7 @@ namespace UI
             e.Cancel = true;
             this.Hide();
         }
-
+        //CAMBIAR DATOS DE USUARIO
         private void btnCambiarDatos_Click(object sender, System.EventArgs e)
         {
 

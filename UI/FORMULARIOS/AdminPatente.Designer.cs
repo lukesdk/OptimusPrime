@@ -32,13 +32,13 @@ namespace UI
         {
             this.SuspendLayout();
             // 
-            // AdminPatente
+            // ActualizarDatosUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 364);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "AdminPatente";
+            this.ClientSize = new System.Drawing.Size(346, 296);
+            this.Name = "ActualizarDatosUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPatente";
             this.Load += new System.EventHandler(this.AdminPatente_Load);
             this.ResumeLayout(false);

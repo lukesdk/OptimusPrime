@@ -15,7 +15,8 @@ namespace UI
         {
             InitializeComponent();
         }
-
+        //boton para restuar un backup 
+        //modulo de Restore.
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
             progressBar1.Value = 0;

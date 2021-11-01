@@ -27,7 +27,7 @@ namespace UI
             InitializeComponent();
             txt_contraseña.PasswordChar = '*';
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             this.AcceptButton = btn_ingresar;
@@ -40,7 +40,8 @@ namespace UI
             Traduccir();
             ComprobarBaseDeDatos();
         }
-
+        //COMPROBACION DE INTEGRIDAD
+        //SI DIGITO VERIFICADOR ES DISTINTO AL ASIGNADO EN LA BASE ARROJA CARTEL DE PROBLEMA DE INTEGRIDAD.
         private void ComprobarBaseDeDatos()
         {
             if (!digitoVerificador.ComprobarIntegridad())
@@ -50,12 +51,12 @@ namespace UI
                 this.Close();
             }
         }
-
+        
         private void Traduccir()
         {
             traductor.Traduccir(this, nombreForm);
         }
-
+        //IDIOMA
         private void CargarCombo()
         {
             var idioma = idiomaBLL.ObtenerTodosLosIdiomas();
@@ -64,7 +65,7 @@ namespace UI
             cbo_idioma.DisplayMember = "Descripcion";
             cbo_idioma.SelectedIndex = 0;
         }
-
+        //BOTON PARA LOGUEARSE
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
             this.CatchException(() =>
@@ -101,7 +102,7 @@ namespace UI
             },
             (ex) => MessageBox.Show($"Ocurrio un error por lo siguiente {ex.Message}"));
         }
-
+        //COMBOBOX PARA CAMBIAR DE IDIOMA
         private void cbo_idioma_SelectedIndexChanged(object sender, EventArgs e)
         {
             var lenguajeSeleccionado = (Idioma)cbo_idioma.SelectedItem;
@@ -110,17 +111,14 @@ namespace UI
 
             Traduccir();
         }
-
+        //BOTON PARA SALIR DEL SISTEMA.
         private void btn_salir_Click(object sender, EventArgs e)
         {
            if (MessageBox.Show("¿Seguro que desea salir?", "Salir del Sistema", MessageBoxButtons.YesNo) == DialogResult.Yes)
            {
                this.Close();
             }
-           //if (Alert.ConfirmationMessage("MSJ037", "¿Seguro que desea salir?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //{
-              //this.Close();
-            //}
+          
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -41,7 +41,7 @@ namespace UI
 
             chklstFamilias.DataSource = descripciones;
         }
-
+        //boton para nueva familia.
         private void btnNueva_Click(object sender, EventArgs e)
         {
             var nombreFamilia = "";
@@ -89,7 +89,7 @@ namespace UI
         {
             return familiaSeleccionada;
         }
-
+         //BOTON PARA DAR DE BAJA PATENTE Y FAMILIA.
         private void btnBaja_Click(object sender, EventArgs e)
         {
             var desc = chklstFamilias.SelectedItem.ToString();
@@ -113,7 +113,7 @@ namespace UI
             CargarFamilias();
             chklstFamilias.Refresh();
         }
-
+        //BOTON MODIFICAR FAMILIAS
         private void btnModificar_Click(object sender, EventArgs e)
         {
             var desc = chklstFamilias.SelectedItem.ToString();
@@ -170,7 +170,7 @@ namespace UI
         {
 
         }
-
+        //BOTON MODIFICAR PATENTE
         private void btnModificarTodo_Click(object sender, EventArgs e)
         {
             adminPatFamilia.ShowDialog();

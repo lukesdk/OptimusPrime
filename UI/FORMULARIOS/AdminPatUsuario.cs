@@ -61,7 +61,7 @@ namespace UI
             PatSistema.DataSource = null;
             PatUsuario.DataSource = null;
         }
-
+        //boton para asignar patente-usuario
         private void btnAsignar_Click(object sender, EventArgs e)
         {
             ActualizarSeleccionado();
@@ -84,7 +84,7 @@ namespace UI
             PatenteSistemaSeleccionada = patenteBLL.ObtenerPatentePorDescripcion(descPatenteSistema, UsuarioSeleccionado.UsuarioId);
             PatenteUsuarioSeleccionada = patenteBLL.ObtenerPatentePorDescripcion(descPatenteUsuario, UsuarioSeleccionado.UsuarioId);
         }
-
+        //boton para quitar Patente-Usuario.
         private void btnQuitar_Click(object sender, EventArgs e)
         {
             ActualizarSeleccionado();

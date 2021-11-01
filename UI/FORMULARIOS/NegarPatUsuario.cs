@@ -101,7 +101,7 @@ namespace UI
 
             this.Hide();
         }
-
+        //BOTON NEGAR PATENTE-USUARIO
         private void btnNegar_Click(object sender, EventArgs e)
         {
             ActualizarSeleccionado();
@@ -144,7 +144,7 @@ namespace UI
                 familia.Patentes = familiaBLL.ObtenerPatentesFamilia(familia.FamiliaId);
             }
         }
-
+        //BOTON HABILITAR PATENTE-USUARIO
         private void btnHabilitar_Click(object sender, EventArgs e)
         {
             ActualizarSeleccionado();

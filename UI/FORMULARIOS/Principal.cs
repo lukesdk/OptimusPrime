@@ -53,18 +53,48 @@ namespace UI
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            ////Traer id de familia que machee con idusuario de familiaUsuario //revisar
-            //var idFamilia = familiaBLL.Cargar().Find(
+           //lista de permisos formularios y usuario
             var patForm = formControl.ObtenerPermisosFormularios();
 
             var patUsu = formControl.ObtenerPermisosUsuario();
 
-            ////patentesUsu.Where(item => patentesForm.Select(item2 => item2.IdPatente).Contains(item.IdPatente)).ToList();
+            //Bloquear Toolstrip por patente.
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "AMBFamilia"))
+            {
+               familiasToolStripMenuItem.Enabled = false;
 
-            if (!patForm.Exists(item => patUsu.Patentes.Select(item2 => item2.IdPatente).Contains(item.IdPatente)))
+            }
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "AMBUsuario"))
             {
                 usuariosToolStripMenuItem.Enabled = false;
+
             }
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "MenuBitacora"))
+            {
+                bitacoraToolStripMenuItem.Enabled = false;
+
+            }
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "MenuBkp"))
+            {
+                backUpToolStripMenuItem.Enabled = false;
+
+            }
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "MenuRestore"))
+            {
+                restoreToolStripMenuItem.Enabled = false;
+
+            }
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "RealizarVentas"))
+            {
+                ventasToolStripMenuItem.Enabled = false;
+
+            }
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "VerVentas"))
+            {
+                ventasToolStripMenuItem.Enabled = false;
+
+            }
+
         }
 
         private void nuevaVenta_Click(object sender, EventArgs e)
@@ -77,6 +107,7 @@ namespace UI
         {
             abmUsuario.MdiParent = this;
             abmUsuario.Show();
+            
         }
 
         private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -171,6 +202,26 @@ namespace UI
             ventaUI.HacerLoad();
             ventaUI.MdiParent = this;
             ventaUI.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+        //boton de refresh de modificaciones.
+        private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Principal_Load(sender, e);
+        }
+
+        private void mANUALToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "file://C:\\diploma-master\\GIT\\OptimusPrime\\Manual\\OptimusPrimeManualdeUsuario.chm");
+        }
+
+        private void AyudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

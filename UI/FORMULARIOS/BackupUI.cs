@@ -18,7 +18,7 @@ namespace UI
         {
 
         }
-
+        //aceptar backup
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             progressBar1.Value = 0;
@@ -82,7 +82,7 @@ namespace UI
                 lblProgreso.Text = $"{e.Percent}%";
             });
         }
-
+        //SELECCIONAR RUTA DEL BACKUP
         private void btnExaminar_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog explorerDialog = new System.Windows.Forms.FolderBrowserDialog();

@@ -94,7 +94,7 @@ namespace UI
 
             CargarRefrescarDatagrid();
 
-            SetearObjetosSeleccionados();
+            //SetearObjetosSeleccionados();
 
             CargarPatentesFamiliaUsuarioSeleccionado();
 
@@ -263,7 +263,7 @@ namespace UI
                 }
             });
         }
-
+        //boton de alta de usuarios.
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
             if (!usuariosBD.Exists(usuario => usuario.Email == txtEmail.Text))
@@ -313,11 +313,12 @@ namespace UI
             }
             else
             {
+                
                 Alert.ShowSimpleAlert("No pueden haber 2 usuarios con el mismo email", "MSJ021");
                 Log4netExtensions.Alta(log, "Se intento guardar o modificar un usuario con el mismo email");
             }
         }
-
+        //boton para modificar datos de usuario dentro de la ABM
         private void btn_modificar_Click(object sender, EventArgs e)
         {
             if (!usuariosBD.Exists(usuario => usuario.Email == txtEmail.Text))
@@ -359,7 +360,7 @@ namespace UI
                 Log4netExtensions.Alta(log, "Se intento guardar o modificar un usuario con el mismo email");
             }
         }
-
+        // boton para borrar usuario dentro de ABM
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             var permitir = verificarDatos();
@@ -417,10 +418,11 @@ namespace UI
                 txtDomicilio.Text = string.Empty;
             });
         }
-
+        //boton para inhabilitar usuarios.
         private void btnUsuariosInactivos_Click(object sender, EventArgs e)
         {
             bloqueoUsuario.ShowDialog();
+            HacerLoad();
         }
 
         private bool verificarDatos()
@@ -532,19 +534,19 @@ namespace UI
             this.dgusuario.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
         }
         #endregion
-
+        //boton para Asignar/quitar Patentes a los usuarios.
         private void btnAsignarPat_Click(object sender, EventArgs e)
         {
             adminPat.ShowDialog();
             HacerLoad();
         }
-
+        // boton para habilitar/Negar patente a los usuarios.
         private void btnNegarPat_Click(object sender, EventArgs e)
         {
             negarPat.ShowDialog();
             HacerLoad();
         }
-
+        //boton para asignar/quitar familias a los usuarios.
         private void btnAsignarFam_Click(object sender, EventArgs e)
         {
             adminFam.ShowDialog();

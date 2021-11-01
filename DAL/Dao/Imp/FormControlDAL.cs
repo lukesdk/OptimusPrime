@@ -18,7 +18,7 @@
 
         public List<Patente> ObtenerPermisosFormularios()
         {
-            var query = "SELECT IdPatente FROM FormularioPatente";
+            var query = "SELECT fp.IdPatente,p.descripcion FROM FormularioPatente fp INNER JOIN Patente p ON p.IdPatente=fp.IdPatente";
 
             return CatchException(() =>
             {

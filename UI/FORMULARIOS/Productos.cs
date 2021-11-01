@@ -29,7 +29,7 @@ namespace UI
             productoSeleccionado = null;
             CargarProductos();
         }
-
+        // BOTON PARA NUEVO PRODUCTO
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             var exito = productoBLL.Crear(new Producto() { Descripcion = txtDescripcion.Text, PVenta = float.Parse(txtPcosto.Text), PUnitario = float.Parse(txtPunitario.Text), Stock = int.Parse(txtCantidad.Text), MinStock = int.Parse(txtMinStock.Text) });
@@ -41,7 +41,7 @@ namespace UI
                 LimpiarControles();
             }
         }
-
+        //BOTON PARA MODIFICAR PRODUCTOS
         private void btnModificar_Click(object sender, EventArgs e)
         {
             var exito = productoBLL.Actualizar(new Producto() {ProductoId = productoSeleccionado.ProductoId, Descripcion = txtDescripcion.Text, PVenta = float.Parse(txtPcosto.Text), PUnitario = float.Parse(txtPunitario.Text), Stock = int.Parse(txtCantidad.Text), MinStock = int.Parse(txtMinStock.Text) });
@@ -53,7 +53,7 @@ namespace UI
                 LimpiarControles();
             }
         }
-
+        //BOTON PARA BORRAR PRODUCTOS
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             var exito = productoBLL.Borrar(productoSeleccionado);
@@ -65,7 +65,7 @@ namespace UI
                 LimpiarControles();
             }
         }
-
+        //LIMPIAMOS LOS ITEMS PARA GENERAR UNA NUEVA VENTA.
         private void LimpiarControles()
         {
             txtDescripcion.Text = string.Empty;
@@ -80,7 +80,7 @@ namespace UI
         {
             Hide();
         }
-
+        //BOTON PARA SELECCIONAR EL PRODUCTO UNA VEZ BUSCADO.
         private void btnSelVta_Click(object sender, EventArgs e)
         {
             ActualizarSeleccionado();
@@ -102,7 +102,7 @@ namespace UI
             }
             Hide();
         }
-
+        //BOTON PARA VISUALIZAR PRODUCTOS INACTIVOS.
         private void btnInactivos_Click(object sender, EventArgs e)
         {
             bloqueoProductos.ShowDialog();

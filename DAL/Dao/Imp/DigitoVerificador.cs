@@ -7,6 +7,9 @@
     {
         public List<string> Entidades { get; set; } = SqlUtils.GetTables();
 
+
+        //Calculos digito verificado Horizontal
+        //agarra tamaño de la palabra y multiplica por la posicion.
         public int CalcularDVHorizontal(List<string> columnasString, List<int> columnasInt)
         {
             var colLenght = new List<int>();
@@ -25,7 +28,8 @@
 
             return digito;
         }
-
+        //Calculos digito verificado Vertical.
+        // la suma de los horizontales.
         public int CalcularDVVertical(string entidad)
         {
             var queryString = string.Format("SELECT SUM(DVH) FROM {0}", entidad);

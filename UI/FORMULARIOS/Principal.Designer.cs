@@ -36,13 +36,16 @@ namespace UI
             this.administradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.familiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.familiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mANUALToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +98,13 @@ namespace UI
             this.bitacoraToolStripMenuItem.Text = "BITACORA";
             this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
+            // familiasToolStripMenuItem
+            // 
+            this.familiasToolStripMenuItem.Name = "familiasToolStripMenuItem";
+            this.familiasToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.familiasToolStripMenuItem.Text = "FAMILIAS";
+            this.familiasToolStripMenuItem.Click += new System.EventHandler(this.familiasToolStripMenuItem_Click_1);
+            // 
             // backUpToolStripMenuItem
             // 
             this.backUpToolStripMenuItem.Name = "backUpToolStripMenuItem";
@@ -108,13 +118,6 @@ namespace UI
             this.restoreToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.restoreToolStripMenuItem.Text = "RESTABLECER COPIA DE SEGURIDAD";
             this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click);
-            // 
-            // familiasToolStripMenuItem
-            // 
-            this.familiasToolStripMenuItem.Name = "familiasToolStripMenuItem";
-            this.familiasToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
-            this.familiasToolStripMenuItem.Text = "FAMILIAS";
-            this.familiasToolStripMenuItem.Click += new System.EventHandler(this.familiasToolStripMenuItem_Click_1);
             // 
             // usuarioToolStripMenuItem
             // 
@@ -138,12 +141,22 @@ namespace UI
             this.ventasToolStripMenuItem,
             this.administradorToolStripMenuItem,
             this.usuarioToolStripMenuItem,
-            this.cerrarSesionToolStripMenuItem});
+            this.actualizarToolStripMenuItem,
+            this.cerrarSesionToolStripMenuItem,
+            this.AyudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(548, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // actualizarToolStripMenuItem
+            // 
+            this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.actualizarToolStripMenuItem.Text = "ACTUALIZAR";
+            this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem
             // 
@@ -151,6 +164,22 @@ namespace UI
             this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
             this.cerrarSesionToolStripMenuItem.Text = "CERRAR SESION";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
+            // 
+            // AyudaToolStripMenuItem
+            // 
+            this.AyudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mANUALToolStripMenuItem});
+            this.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem";
+            this.AyudaToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.AyudaToolStripMenuItem.Text = "AYUDA";
+            this.AyudaToolStripMenuItem.Click += new System.EventHandler(this.AyudaToolStripMenuItem_Click);
+            // 
+            // mANUALToolStripMenuItem
+            // 
+            this.mANUALToolStripMenuItem.Name = "mANUALToolStripMenuItem";
+            this.mANUALToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mANUALToolStripMenuItem.Text = "MANUAL";
+            this.mANUALToolStripMenuItem.Click += new System.EventHandler(this.mANUALToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -193,5 +222,8 @@ namespace UI
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verVentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AyudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mANUALToolStripMenuItem;
     }
 }

@@ -16,7 +16,7 @@ namespace UI
             this.detalleVentaBLL = detalleVentaBLL;
             InitializeComponent();
         }
-
+        //CARGAMOS EL DETALLE DE LAS VENTAS
         private void DetalleRefForm_Load(object sender, EventArgs e)
         {
             dgDetalleVenta.AutoGenerateColumns = false;

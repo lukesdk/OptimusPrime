@@ -183,8 +183,8 @@ namespace UI
 
         private void chklstFamilias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var descFamilia = (List<string>)chklstFamilias.DataSource;
-            familiaSeleccionada = new Familia() { Descripcion = descFamilia.FirstOrDefault(), FamiliaId = familiaBLL.ObtenerIdFamiliaPorDescripcion(descFamilia.FirstOrDefault()) };
+
+            familiaSeleccionada = new Familia() { Descripcion = chklstFamilias.SelectedItem.ToString(), FamiliaId = familiaBLL.ObtenerIdFamiliaPorDescripcion(chklstFamilias.SelectedItem.ToString()) };
         }
     }
 }

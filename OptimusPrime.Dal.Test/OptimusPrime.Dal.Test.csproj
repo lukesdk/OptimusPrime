@@ -82,9 +82,9 @@
       <Project>{e65d285d-3d62-4ff6-be74-844e358a140d}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UI\UI.csproj">
+    <ProjectReference Include="..\UI\lU.csproj">
       <Project>{1D65310B-2CF5-4FC3-9F5E-6EF9EB0BD37B}</Project>
-      <Name>UI</Name>
+      <Name>lU</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

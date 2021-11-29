@@ -1,5 +1,6 @@
 ﻿namespace BE.Entidades
 {
+    //Detalle de atributos de la Clase:Patente
     public class Patente
     {
         public int IdPatente { get; set; }

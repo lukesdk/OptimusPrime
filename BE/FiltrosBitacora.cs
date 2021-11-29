@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
 
+    //Detalle de atributos de la Clase:FiltrosBitacora
     public class FiltrosBitacora
     {
         public DateTime FechaDesde { get; set; }

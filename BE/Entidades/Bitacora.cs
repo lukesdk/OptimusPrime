@@ -1,7 +1,7 @@
 ﻿namespace BE.Entidades
 {
     using System.Data.SqlTypes;
-
+    // declaramos los atributos de la clase Bitacora
     public class Bitacora
     {
         public int IdLog { get; set; }

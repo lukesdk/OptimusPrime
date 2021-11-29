@@ -3,6 +3,7 @@
     using BE.Entidades;
     using System.Collections.Generic;
     using System.Windows.Forms;
+    //interfaz permite injeccion de dependencias.
 
     public interface IIdiomaBLL
     {

@@ -40,6 +40,7 @@ namespace UI
             this.cbo_idioma = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_CambiarBase = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,12 +144,23 @@ namespace UI
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_CambiarBase
+            // 
+            this.btn_CambiarBase.Location = new System.Drawing.Point(210, 12);
+            this.btn_CambiarBase.Name = "btn_CambiarBase";
+            this.btn_CambiarBase.Size = new System.Drawing.Size(86, 23);
+            this.btn_CambiarBase.TabIndex = 11;
+            this.btn_CambiarBase.Text = "Cambiar Base";
+            this.btn_CambiarBase.UseVisualStyleBackColor = true;
+            this.btn_CambiarBase.Click += new System.EventHandler(this.btn_CambiarBase_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(302, 336);
+            this.Controls.Add(this.btn_CambiarBase);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbo_idioma);
@@ -182,6 +194,7 @@ namespace UI
         private System.Windows.Forms.ComboBox cbo_idioma;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_CambiarBase;
     }
 }
 

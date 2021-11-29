@@ -1,7 +1,7 @@
 ﻿namespace BE.Entidades
 {
     using System;
-
+    //Detalle de atributos de la Clase:LineaVenta
     public class LineaVenta
     {
         public int VentaId { get; set; }

@@ -299,7 +299,7 @@ namespace UI
 
                         Log4netExtensions.Media(log, "Se ha creado un nuevo usuario");
                         bitacoraBLL.RegistrarEnBitacora(usu);
-                        Alert.ShowSimpleAlert("Registro exitoso", "MSJ017");
+                        Alert.ShowSimpleAlert("Registro exitoso","MSJ017");
                         CargarRefrescarDatagrid();
                         LimpiarControles();
                     }
@@ -307,14 +307,14 @@ namespace UI
                     {
                         Log4netExtensions.Baja(log, "El registro de nuevo usuario ha fallado");
                         bitacoraBLL.RegistrarEnBitacora(usu);
-                        Alert.ShowSimpleAlert("El registro de nuevo usuario ha fallado", "MSJ019");
+                        Alert.ShowSimpleAlert("El registro de nuevo usuario ha fallado","MSJ019");
                     }
                 }
             }
             else
             {
                 
-                Alert.ShowSimpleAlert("No pueden haber 2 usuarios con el mismo email", "MSJ021");
+                Alert.ShowSimpleAlert("No pueden haber 2 usuarios con el mismo email","MSJ021");
                 Log4netExtensions.Alta(log, "Se intento guardar o modificar un usuario con el mismo email");
             }
         }
@@ -385,7 +385,8 @@ namespace UI
 
                         Log4netExtensions.Alta(log, string.Format("Se borrado al usuario {0}", UsuarioSeleccionado.Email));
                         bitacoraBLL.RegistrarEnBitacora(UsuarioActivo);
-                        Alert.ShowSimpleAlert("Borrado exitoso", "MSJ027");
+                        Alert.ShowSimpleAlert("Borrado exitoso","MSJ027");
+                        //MessageBox.Show("Borrado exitoso", "Borrado de Usuario");
                         CargarRefrescarDatagrid();
                         LimpiarControles();
                     }
@@ -393,7 +394,7 @@ namespace UI
                     {
                         Log4netExtensions.Baja(log, "El borrado de usuario ha fallado");
                         bitacoraBLL.RegistrarEnBitacora(UsuarioActivo);
-                        Alert.ShowSimpleAlert("El borrado de usuario ha fallado", "MSJ029");
+                        Alert.ShowSimpleAlert("El borrado de usuario ha fallado","MSJ029");
                         CargarRefrescarDatagrid();
                     }
                 }
@@ -401,7 +402,8 @@ namespace UI
                 {
                     Log4netExtensions.Media(log, "Una patente se encuentra en uso y no puede borrarse");
                     bitacoraBLL.RegistrarEnBitacora(UsuarioActivo);
-                    Alert.ShowSimpleAlert("Una patente se encuentra en uso y no puede borrarse", "MSJ013");
+                    Alert.ShowSimpleAlert("Una patente se encuentra en uso y no puede borrarse","MSJ013");
+
                     CargarRefrescarDatagrid();
                 }
             }
@@ -431,7 +433,7 @@ namespace UI
 
             if (txtEmail.Text == DES.Decrypt(UsuarioActivo.Email, key, iv))
             {
-                Alert.ShowSimpleAlert("No puede realizar acciones sobre el usuario activo", "MSJ031");
+                Alert.ShowSimpleAlert("No puede realizar acciones sobre el usuario activo","MSJ031");
                 Log4netExtensions.Alta(log, "Se intento eliminar o modificar al usuario activo");
                 returnValue = false;
             }
@@ -440,7 +442,7 @@ namespace UI
             {
                 if (string.IsNullOrEmpty(tb.Text.Trim()))
                 {
-                    Alert.ShowSimpleAlert("Todos los datos deben estar completos", "MSJ033");
+                    Alert.ShowSimpleAlert("Todos los datos deben estar completos","MSJ033");
                     Log4netExtensions.Baja(log, "Todos los datos deben estar completos");
                     returnValue = false;
                     break;

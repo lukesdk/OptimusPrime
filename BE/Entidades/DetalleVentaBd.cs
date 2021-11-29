@@ -1,5 +1,6 @@
 ﻿namespace BE.Entidades
 {
+    //Detalle de los atributos de la clase DetalleVentaBD
     public class DetalleVentaBd
     {
         public int DetalleId { get; set; }

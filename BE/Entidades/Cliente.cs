@@ -1,5 +1,6 @@
 ﻿namespace BE.Entidades
-{
+{ 
+    //Declaramos los atributos de la clase Cliente
     public class Cliente
     {
         public int ClienteId { get; set; }

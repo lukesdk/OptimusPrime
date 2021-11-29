@@ -4,7 +4,9 @@ namespace UI
     using BE.Entidades;
     using BLL;
     using DAL.Dao;
+    using DAL.Utils;
     using System;
+    using System.Linq;
     using System.Windows.Forms;
 
     public partial class Login : Form
@@ -27,7 +29,7 @@ namespace UI
             InitializeComponent();
             txt_contraseña.PasswordChar = '*';
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.AcceptButton = btn_ingresar;
@@ -48,10 +50,35 @@ namespace UI
             {
                 Alert.ShowSimpleAlert("Problema integridad base de datos, contacte al administrador", "MSJ000");
 
-                this.Close();
+                var items = new InputBoxItem[2];
+                items[0] = new InputBoxItem("Usuario", "", false);
+                items[1] = new InputBoxItem("Contraseña", "", true);
+
+                var input = InputBox.Show("Ingrese credenciales de un administrador", items, InputBoxButtons.OK);
+
+                if (input.Result == InputBoxResult.OK)
+                {
+                    var usuario = usuarioBLL.ObtenerUsuarioConEmail(input.Items["Usuario"]);
+                    formControl.GuardarDatosSesionUsuario(usuario);
+                    usuario = formControl.ObtenerInfoUsuario();
+
+                    if (usuario.Familia.Any(x => x.Descripcion == "Admin"))
+                    {
+                        if (usuarioBLL.LogIn(input.Items["Usuario"], input.Items["Contraseña"]))
+                        {
+                            digitoVerificador.ActualizarDVVertical("Usuario");
+                        }
+                    }
+                    else
+                    {
+                        Alert.ShowSimpleAlert("Usted no es un usuario administrador", "MSJ087");
+                        this.Close();
+                    }
+                }
+
             }
         }
-        
+
         private void Traduccir()
         {
             traductor.Traduccir(this, nombreForm);
@@ -88,11 +115,11 @@ namespace UI
 
                     else if (usuarioBLL.ObtenerUsuarioConEmail(usuario).ContadorIngresosIncorrectos < 3)
                     {
-                        MessageBox.Show("Login Incorrecto","Ingresar al Sistema");
+                        MessageBox.Show("Login Incorrecto", "Ingresar al Sistema");
                     }
                     else
                     {
-                        MessageBox.Show("Cuenta bloqueada contacte a su administrador","Ingresar al Sistema");
+                        MessageBox.Show("Cuenta bloqueada contacte a su administrador", "Ingresar al Sistema");
                     }
                 }
                 else
@@ -114,11 +141,11 @@ namespace UI
         //BOTON PARA SALIR DEL SISTEMA.
         private void btn_salir_Click(object sender, EventArgs e)
         {
-           if (MessageBox.Show("¿Seguro que desea salir?", "Salir del Sistema", MessageBoxButtons.YesNo) == DialogResult.Yes)
-           {
-               this.Close();
+            if (Alert.ConfirmationMessage("MSJ037", "Salir del Sistema", MessageBoxButtons.YesNo, "¿Seguro que desea salir?") == DialogResult.Yes)
+            {
+                this.Close();
             }
-          
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -129,6 +156,18 @@ namespace UI
         private void txt_user_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_CambiarBase_Click(object sender, EventArgs e)
+        {
+            var items = new InputBoxItem[1];
+            items[0] = new InputBoxItem("ConnectionString", "", false);
+            var input = InputBox.Show("Escriba el nombre de la base de datos", items, InputBoxButtons.OKCancel);
+
+            if (input.Result == InputBoxResult.OK)
+            {
+                SqlUtils.Connection(input.Items["ConnectionString"]);
+            }
         }
     }
 }

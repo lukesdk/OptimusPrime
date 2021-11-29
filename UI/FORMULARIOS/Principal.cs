@@ -86,10 +86,15 @@ namespace UI
             }
             if (!patUsu.Patentes.Any(x => x.Descripcion == "RealizarVentas"))
             {
-                ventasToolStripMenuItem.Enabled = false;
+                nuevaVenta.Enabled = false;
 
             }
             if (!patUsu.Patentes.Any(x => x.Descripcion == "VerVentas"))
+            {
+                verVentasToolStripMenuItem.Enabled = false;
+
+            }
+            if (!patUsu.Patentes.Any(x => x.Descripcion == "MenuVentas"))
             {
                 ventasToolStripMenuItem.Enabled = false;
 
@@ -211,12 +216,19 @@ namespace UI
         //boton de refresh de modificaciones.
         private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Principal_Load(sender, e);
+            if (MessageBox.Show("¿Seguro que desea actualizar?", "Actualizar modificaciones", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Principal_Load(sender, e);
+                //this.Close();
+            }
+            
         }
 
         private void mANUALToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, "file://C:\\diploma-master\\GIT\\OptimusPrime\\Manual\\OptimusPrimeManualdeUsuario.chm");
+           
+            
         }
 
         private void AyudaToolStripMenuItem_Click(object sender, EventArgs e)

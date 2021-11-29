@@ -3,6 +3,7 @@
     using BE;
     using BE.Entidades;
     using System.Collections.Generic;
+    //interfaz permite injeccion de dependencias.
 
     public interface IFamiliaBLL : ICRUD<Familia>
     {

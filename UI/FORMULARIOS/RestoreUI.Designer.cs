@@ -65,6 +65,7 @@ namespace UI
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(240, 26);
             this.progressBar1.TabIndex = 55;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // txtBackFiles
             // 

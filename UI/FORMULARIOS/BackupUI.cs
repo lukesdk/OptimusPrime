@@ -33,8 +33,9 @@ namespace UI
             {
                 if (txtDirectorio.Text.Trim() != String.Empty && txtNombre.Text.Trim() != String.Empty)
                 {
-                    var dbServer = new Server(new ServerConnection(SqlUtils.Connection()));
-                    var dbBackUp = new Backup() { Action = BackupActionType.Database, Database = "OPTIMUSPRIME" };
+                    var conn = new ServerConnection(SqlUtils.Connection());
+                    var dbServer = new Server(conn);
+                    var dbBackUp = new Backup() { Action = BackupActionType.Database, Database = conn.DatabaseName };
 
                     for (int i = 0; i < cantVolumenes; i++)
                     {
@@ -55,6 +56,7 @@ namespace UI
             {
                 MessageBox.Show(ex.Message, "Hubo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            MessageBox.Show("La copia de seguridad ha finalizado con Exito", "Copia de Seguridad");
         }
 
         private void DbBackUp_Complete(object sender, Microsoft.SqlServer.Management.Common.ServerMessageEventArgs e)

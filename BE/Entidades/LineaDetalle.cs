@@ -1,5 +1,6 @@
 ﻿namespace BE.Entidades
 {
+    //Detalle de atributos de la Clase:LineaDetalle
     public class LineaDetalle
 
     {

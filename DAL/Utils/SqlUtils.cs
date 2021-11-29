@@ -12,15 +12,30 @@
     public class SqlUtils : BaseDao
     {
         ////private static log4net.ILog log;
-
         public SqlUtils()
         {
         }
 
-        public static SqlConnection Connection()
+        public static SqlConnection Connection(string newDatabaseName = null)
         {
-            ////SetearConfiguracion();
             var conn = new SqlConnection(ConfigurationManager.AppSettings["connString"]);
+           
+            if (!string.IsNullOrEmpty(newDatabaseName))
+            {
+                var appPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                var configFile = System.IO.Path.Combine(appPath, "UI.exe.config");
+                var configFileMap = new ExeConfigurationFileMap();
+                configFileMap.ExeConfigFilename = configFile;
+                var config = ConfigurationManager.OpenMappedExeConfiguration(configFileMap, ConfigurationUserLevel.None);
+
+                config.AppSettings.Settings["connString"].Value = $"Data Source=.\\SQLEXPRESS;Initial Catalog={newDatabaseName};Integrated Security=True";
+                config.Save();
+
+                ConfigurationManager.RefreshSection("appSettings");
+
+                conn.ConnectionString = conn.ConnectionString.Replace(conn.Database, newDatabaseName);
+            }
+
             return conn;
         }
 
@@ -58,9 +73,7 @@
         {
             ////log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            var connectionString = config
-                .AppSettings.Settings["connString"]
-                .Value;
+            var connectionString = config.AppSettings.Settings["connString"].Value;
             var startIndex = connectionString.IndexOf('=');
             var endIndex = connectionString.IndexOf('\\');
             var cambiarNombre = connectionString.Substring(startIndex + 1, endIndex - startIndex - 1);

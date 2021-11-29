@@ -7,6 +7,7 @@
     using System;
     using System.Collections.Generic;
 
+    //Llave que voy a utilizar para la encriptacion 
     public class BitacoraBLL : IBitacoraBLL
     {
         private const string Key = "bZr2URKx";
@@ -28,7 +29,7 @@
             throw new NotImplementedException();
         }
 
-        public List<Bitacora> LeerBitacoraPorUsuarioCriticidadYFecha(List<string> usuarios, List<string> criticidades, DateTime desde, DateTime hasta)
+        public List<Bitacora> LeerBitacoraPorUsuarioCriticidadYFecha(List<string> usuarios, List<string> criticidades, string desde, string hasta)
         {
             return bitacoraDAL.LeerBitacoraPorUsuarioCriticidadYFecha(usuarios, criticidades, desde, hasta);
         }

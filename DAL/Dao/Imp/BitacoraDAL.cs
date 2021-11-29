@@ -67,7 +67,7 @@
             });
         }
 
-        public List<Bitacora> LeerBitacoraPorUsuarioCriticidadYFecha(List<string> usuarios, List<string> criticidades, DateTime desde, DateTime hasta)
+        public List<Bitacora> LeerBitacoraPorUsuarioCriticidadYFecha(List<string> usuarios, List<string> criticidades, string desde, string hasta)
         {
             var queryImpl = "SELECT * from Bitacora WHERE ";
             var idsUsuParameters = string.Empty;
@@ -107,7 +107,7 @@
                 queryImpl += string.Format("Criticidad IN ({0}) AND  ", criticidadesParameters);
             }
 
-            query = string.Format(queryImpl + " Fecha BETWEEN '{0}' AND '{1}'", desde.ToString("yyyy-MM-dd",CultureInfo.InvariantCulture), hasta.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
+            query = string.Format(queryImpl + " Fecha BETWEEN '{0}' AND '{1}'", desde, hasta);
 
             CatchException(() =>
             {

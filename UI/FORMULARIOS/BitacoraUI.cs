@@ -7,6 +7,7 @@ namespace UI
     using System;
     using System.Collections.Generic;
     using System.Data;
+    using System.Globalization;
     using System.Linq;
     using System.Windows.Forms;
     using UI.Modelo;
@@ -53,14 +54,20 @@ namespace UI
         //BOTON PARA FILTRAR LA BITACORA.
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
-            var fechaDesde = dateTimePicker1.Value;
-            var fechaHasta = dateTimePicker2.Value;
+            var fechaDesde = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+            var fechaHasta = dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss",CultureInfo.CurrentCulture);
             var usuariosSeleccionados = new List<string>();
             var criticidadesSeleccionadas = new List<string>();
 
             for (int i = 0; i < checkListUsuarios.CheckedItems.Count; i++)
             {
                 var usuarioToAdd = bitacoraBLL.CargarUsuarios().FirstOrDefault(u => u == (string)checkListUsuarios.CheckedItems[i]);
+               
+                if (usuarioToAdd.Contains("'"))
+                {
+                    usuarioToAdd = usuarioToAdd.Replace("'", "''");
+                }
+                
                 usuariosSeleccionados.Add(usuarioToAdd);
             }
 
@@ -69,9 +76,9 @@ namespace UI
                 criticidadesSeleccionadas.Add((string)checkListCriticidad.CheckedItems[i]);
             }
 
-            var idUsuarios = usuariosSeleccionados.Select(u => u).ToList();
+            var emailUsuarios = usuariosSeleccionados.Select(u => u).ToList();
 
-            var listaBitacora = ListarBitacora(idUsuarios, criticidadesSeleccionadas, fechaDesde, fechaHasta);
+            var listaBitacora = ListarBitacora(emailUsuarios, criticidadesSeleccionadas, fechaDesde, fechaHasta);
 
             if (listaBitacora != null)
             {
@@ -125,7 +132,7 @@ namespace UI
             return dsBitacora;
         }
 
-        public List<Bitacora> ListarBitacora(List<string> usuarios, List<string> prueba, DateTime fechaDesde, DateTime fechaHasta)
+        public List<Bitacora> ListarBitacora(List<string> usuarios, List<string> prueba, string fechaDesde, string fechaHasta)
         {
             var listaBitacora = bitacoraBLL.LeerBitacoraPorUsuarioCriticidadYFecha(usuarios, prueba, fechaDesde, fechaHasta);
 

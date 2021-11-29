@@ -60,6 +60,8 @@ namespace UI
             UsuarioActivo = formControl.ObtenerInfoUsuario();
 
             traductor.Traduccir(this, nomEntidad);
+
+
         }
         //BOTON PARA AGREGAR PRODUCTOS.
         private void btnAgregarProducto_Click(object sender, EventArgs e)

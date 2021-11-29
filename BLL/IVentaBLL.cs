@@ -2,6 +2,7 @@
 {
     using BE;
     using BE.Entidades;
+    //interfaz permite injeccion de dependencias.
 
     public interface IVentaBLL : ICRUD<Venta>
     {

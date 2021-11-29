@@ -23,10 +23,17 @@
             MessageBox.Show(mensaje, title, buttons, icon);
         }
 
-        public static DialogResult ConfirmationMessage(string messageCode, string title, MessageBoxButtons buttons)
+        public static DialogResult ConfirmationMessage(string messageCode, string title, MessageBoxButtons buttons, string msj = null)
         {
             var mensaje = ProcessMessage(messageCode);
-            return MessageBox.Show(mensaje, "Salir del sistema", MessageBoxButtons.YesNo);
+           
+            if (string.IsNullOrEmpty(mensaje))
+            {
+                msj = string.Empty;
+                msj = mensaje;
+            }
+
+            return MessageBox.Show(msj, title, buttons);
         }
 
         private static string ProcessMessage(string messageNumber)

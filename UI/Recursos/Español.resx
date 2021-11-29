@@ -129,4 +129,7 @@
   <data name="MSJ037" xml:space="preserve">
     <value>¿Esta seguro que quiere salir?</value>
   </data>
+  <data name="MSJ087" xml:space="preserve">
+    <value>Usted no es un usuario administrador</value>
+  </data>
 </root>

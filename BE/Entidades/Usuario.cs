@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
 
+    //Detalle de atributos de la Clase:Usuario
     public class Usuario
     {
         public int UsuarioId { get; set; }

@@ -2,6 +2,7 @@
 {
     using System;
 
+    //Detalle de atributos de la Clase:Venta
     public class Venta
     {
         public int VentaId { get; set; }

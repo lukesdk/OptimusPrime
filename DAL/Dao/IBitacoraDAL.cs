@@ -17,7 +17,7 @@
 
         int ObtenerUltimoIdBitacora();
 
-        List<Bitacora> LeerBitacoraPorUsuarioCriticidadYFecha(List<string> usuarios, List<string> criticidades, DateTime desde, DateTime hasta);
+        List<Bitacora> LeerBitacoraPorUsuarioCriticidadYFecha(List<string> usuarios, List<string> criticidades, string desde, string hasta);
 
         List<string> CargarUsuarios();
     }

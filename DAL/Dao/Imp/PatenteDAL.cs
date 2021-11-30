@@ -21,7 +21,6 @@
         public bool AsignarPatente(int familiaId, int patenteId)
         {
             var asignado = false;
-            var digitoVerificadorHorizontal = digitoVerificador.CalcularDVHorizontal(new List<string>(), new List<int>() { familiaId, patenteId });
             CatchException(() =>
               {
                   asignado = Exec($"INSERT INTO FamiliaPatente (FamiliaId, IdPatente) VALUES ({familiaId}, {patenteId})");
@@ -65,7 +64,6 @@
             {
                 foreach (var id in patentesId)
                 {
-                    var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { }, new List<int> { id, usuarioId });
                     var queryString = $"INSERT INTO UsuarioPatente(IdPatente, UsuarioId, Negada) VALUES ({id},{usuarioId}, 0)";
 
                     CatchException(() =>
@@ -93,7 +91,6 @@
             }
             else
             {
-                var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { }, new List<int> { patenteId, usuarioId });
                 queryString = $"INSERT INTO UsuarioPatente(IdPatente, UsuarioId, Negada) VALUES ({patenteId},{usuarioId}, 1)";
             }
 
@@ -197,7 +194,6 @@
         {
             foreach (var id in patentesId)
             {
-                var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { }, new List<int> { id, usuarioId });
                 var queryString = $"DELETE FROM UsuarioPatente WHERE IdPatente = {id} AND UsuarioId = {usuarioId}";
 
                 CatchException(() =>
@@ -397,14 +393,6 @@
             }
         }
 
-        private static void CargarFamilias(Usuario usuario, List<int> familiaId)
-        {
-            foreach (var idfam in familiaId)
-            {
-                usuario.Familia.Add(new Familia() { FamiliaId = idfam });
-            }
-        }
-
         private List<Patente> ComprobarPatentesDeUsuariosPropiosYGlobales(Familia familiaABorrar, List<Usuario> usuariosGlobales)
         {
             var usuarios = familiaDAL.ObtenerUsuariosPorFamilia(familiaABorrar.FamiliaId);
@@ -446,11 +434,6 @@
             }
 
             return patentesSinUsuarios;
-        }
-
-        private bool ComprobarUsuarioFamilia()
-        {
-            return familiaDAL.ObtenerTodasLasFamiliasYUsuarios().Count > 0;
         }
 
         private bool ComprobarTablaUsuarioPatente()
@@ -551,6 +534,37 @@
             }
 
             return false;
+        }
+
+        public void CargarDVHPatentes()
+        {
+            var query = "SELECT * FROM Patente";
+            var listaPatentes = new List<Patente>();
+
+
+            CatchException(() =>
+            {
+                listaPatentes = Exec<Patente>(query);
+            });
+
+            foreach (var patente in listaPatentes)
+            {
+                var digito = digitoVerificador.CalcularDVHorizontal(new List<string>() { patente.Descripcion });
+
+                //HACER update
+
+                var q = $"UPDATE Patente SET DVH = {digito} WHERE IdPatente = @Id";
+
+                CatchException(() =>
+                {
+                    Exec(
+                        q,
+                        new
+                        {
+                            @Id = patente.IdPatente
+                        });
+                });
+            }
         }
     }
 }

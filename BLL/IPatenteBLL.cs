@@ -37,5 +37,7 @@
         bool CheckeoFamiliaParaBorrar(Familia familia, List<Usuario> usuariosGlobales);
 
         bool CheckeoPatenteParaBorrar(Patente patente, Usuario usuario, List<Usuario> usuariosGlobales, bool paraNegar = false);
+
+        void CargarDVHPatentes();
     }
 }

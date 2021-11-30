@@ -96,7 +96,6 @@
         {
             foreach (var id in familiasId)
             {
-                var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { }, new List<int> { id, usuarioId });
                 var queryString = $"INSERT INTO FamiliaUsuario(FamiliaId, UsuarioId) VALUES('{id}','{usuarioId}')";
 
                 CatchException(() =>

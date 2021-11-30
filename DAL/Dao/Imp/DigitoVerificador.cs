@@ -10,20 +10,16 @@
 
         //Calculos digito verificado Horizontal
         //agarra tamaño de la palabra y multiplica por la posicion.
-        public int CalcularDVHorizontal(List<string> columnasString, List<int> columnasInt)
+        public int CalcularDVHorizontal(List<string> columnasString)
         {
-            var colLenght = new List<int>();
             var digito = 0;
-            colLenght = columnasInt;
 
-            foreach (var col in columnasString)
+            foreach (var str in columnasString)
             {
-                colLenght.Add(col.Length);
-            }
-
-            foreach (var colL in colLenght)
-            {
-                digito += colL * colLenght.FindIndex(x => x == colL);
+                foreach (var ch in str)
+                {
+                    digito += (int)ch;
+                }
             }
 
             return digito;
@@ -33,6 +29,11 @@
         public int CalcularDVVertical(string entidad)
         {
             var queryString = string.Format("SELECT SUM(DVH) FROM {0}", entidad);
+            
+            if(entidad == "Bitacora")
+            {
+                queryString = string.Format("SELECT SUM(CAST(DVH AS INT)) FROM {0}", entidad);
+            }
 
             return CatchException(() =>
             {
@@ -105,7 +106,34 @@
 
             var dvverticalUsuario = ConsultarDVVertical(Entidades.Find(x => x == "Usuario"));
 
+            var resultadoBitacora = CalcularDVVertical(Entidades.Find(x => x == "Bitacora"));
+
+            var dvverticalBitacora = ConsultarDVVertical(Entidades.Find(x => x == "Bitacora"));
+
+            var resultadoPatente = CalcularDVVertical(Entidades.Find(x => x == "Patente"));
+
+            var dvverticalPatente = ConsultarDVVertical(Entidades.Find(x => x == "Patente"));
+
+            var resultadoVenta = CalcularDVVertical(Entidades.Find(x => x == "Venta"));
+
+            var dvverticalVenta = ConsultarDVVertical(Entidades.Find(x => x == "Venta"));
+
             if (resultadoUsuario != dvverticalUsuario["Usuario"])
+            {
+                returnValue = false;
+            }
+
+            if (resultadoBitacora != dvverticalBitacora["Bitacora"])
+            {
+                returnValue = false;
+            }
+
+            if (resultadoPatente != dvverticalPatente["Patente"])
+            {
+                returnValue = false;
+            }
+
+            if (resultadoVenta != dvverticalVenta["Venta"])
             {
                 returnValue = false;
             }

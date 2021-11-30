@@ -8,10 +8,12 @@
     public class VentaBLL : ICRUD<Venta>, IVentaBLL
     {
         private readonly IVentaDAL ventaDAL;
+        private readonly IDigitoVerificador digitoVerificador;
 
-        public VentaBLL(IVentaDAL ventaDAL)
+        public VentaBLL(IVentaDAL ventaDAL, IDigitoVerificador digitoVerificador)
         {
             this.ventaDAL = ventaDAL;
+            this.digitoVerificador = digitoVerificador;
         }
 
         public bool Actualizar(Venta objUpd)
@@ -29,9 +31,16 @@
             return ventaDAL.Cargar();
         }
 
+        public void CargarDVHVenta()
+        {
+            ventaDAL.CargarDVHVenta();
+        }
+
         public bool Crear(Venta objAlta)
         {
-            return ventaDAL.Crear(objAlta);
+            var result =  ventaDAL.Crear(objAlta);
+            digitoVerificador.ActualizarDVVertical("Venta");
+            return result;
         }
 
         public string ObtenerEstadoVenta(int estadoId)

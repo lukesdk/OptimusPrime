@@ -13,12 +13,14 @@
 
         Bitacora LeerBitacoraConId(int bitacoraId);
 
-        int GenerarDVH(Usuario usu);
+        int GenerarDVH();
 
         int ObtenerUltimoIdBitacora();
 
         List<Bitacora> LeerBitacoraPorUsuarioCriticidadYFecha(List<string> usuarios, List<string> criticidades, string desde, string hasta);
 
         List<string> CargarUsuarios();
+
+        void CargarDVHBitacora();
     }
 }

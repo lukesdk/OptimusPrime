@@ -16,5 +16,7 @@
         List<Bitacora> LeerBitacoraPorUsuarioCriticidadYFecha(List<string> usuarios, List<string> criticidades, string desde, string hasta);
 
         List<string> CargarUsuarios();
+
+        void CargarDVHBitacora();
     }
 }

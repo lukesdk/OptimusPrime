@@ -18,9 +18,9 @@
 
         public bool Crear(Venta objAlta)
         {
-            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string>() { }, new List<int>() { });
+            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string>() { objAlta.Fecha.ToString()});
 
-            var queryString = "INSERT INTO Venta(Fecha, UsuarioId, EstadoId,TipoVentaId,ClienteId,Monto) VALUES (@fecha, @usuarioId, @estado, @tipoVenta, @cliente, @monto)";
+            var queryString = "INSERT INTO Venta(Fecha, UsuarioId, EstadoId,TipoVentaId,ClienteId,Monto,dvh) VALUES (@fecha, @usuarioId, @estado, @tipoVenta, @cliente, @monto, @dvh)";
             return CatchException(() =>
             {
                 return Exec(
@@ -34,7 +34,7 @@
                         @tipoVenta = objAlta.TipoVentaId,
                         @cliente = objAlta.ClienteId,
                         @monto = objAlta.Monto,
-                        
+                        @dvh = digitoVH
                     });
             });
         }
@@ -128,6 +128,37 @@
             }
 
             return 0;
+        }
+
+        public void CargarDVHVenta()
+        {
+            var query = "SELECT * FROM Venta";
+            var listalistaVentas = new List<Venta>();
+
+
+            CatchException(() =>
+            {
+                listalistaVentas = Exec<Venta>(query);
+            });
+
+            foreach (var venta in listalistaVentas)
+            {
+                var digito = digitoVerificador.CalcularDVHorizontal(new List<string>() { venta.Fecha.ToString() });
+
+                //HACER update
+
+                var q = $"UPDATE Venta SET DVH = {digito} WHERE VentaId = @Id";
+
+                CatchException(() =>
+                {
+                    Exec(
+                        q,
+                        new
+                        {
+                            @Id = venta.VentaId
+                        });
+                });
+            }
         }
 
         public enum TipoVenta

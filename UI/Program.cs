@@ -30,9 +30,15 @@ namespace UI
                 IoCContainer.Resolve<IDigitoVerificador>(),
                 IoCContainer.Resolve<ITraductor>()));
 
+
             //Application.Run(new BackupUI());
             //Application.Run(new BloqueoUsuario(IoCContainer.Resolve<IUsuarioBLL>()));
             //Application.Run(new ABMusuario(IoCContainer.Resolve<IBitacoraBLL>(), IoCContainer.Resolve<IFormControl>(), IoCContainer.Resolve<IFamiliaBLL>(), IoCContainer.Resolve<IPatenteBLL>(), IoCContainer.Resolve<IDigitoVerificador>()));
+
+            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Usuario");
+            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Bitacora");
+            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Patente");
+            IoCContainer.Resolve<IDigitoVerificador>().ActualizarDVVertical("Venta");
         }
     }
 }

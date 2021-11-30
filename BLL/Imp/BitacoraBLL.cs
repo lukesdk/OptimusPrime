@@ -13,10 +13,17 @@
         private const string Key = "bZr2URKx";
         private const string Iv = "HNtgQw0w";
         private readonly IBitacoraDAL bitacoraDAL;
+        private readonly IDigitoVerificador digitoVerificador;
 
-        public BitacoraBLL(IBitacoraDAL bitacoraDAL)
+        public BitacoraBLL(IBitacoraDAL bitacoraDAL, IDigitoVerificador digitoVerificador)
         {
             this.bitacoraDAL = bitacoraDAL;
+            this.digitoVerificador = digitoVerificador;
+        }
+
+        public void CargarDVHBitacora()
+        {
+            bitacoraDAL.CargarDVHBitacora();
         }
 
         public List<string> CargarUsuarios()
@@ -45,9 +52,11 @@
                 MDC.Set("usuario", "Sistema");
             }
 
-            var digitoVH = bitacoraDAL.GenerarDVH(usu);
+            var digitoVH = bitacoraDAL.GenerarDVH();
 
             GlobalContext.Properties["dvh"] = digitoVH;
+
+            digitoVerificador.ActualizarDVVertical("Bitacora");
         }
     }
 }

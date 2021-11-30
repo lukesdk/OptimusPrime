@@ -33,7 +33,7 @@
             var emailEncript = DES.Encrypt(objAlta.Email, Key, Iv);
 
             objAlta.UsuarioId = ObtenerUltimoIdUsuario() + 1;
-            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { objAlta.Nombre, emailEncript, contEncript }, new List<int> { objAlta.UsuarioId });
+            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { objAlta.Nombre, emailEncript, contEncript });
 
             //evitar sqlinjection @.
             var queryString = "INSERT INTO Usuario(Nombre, Apellido, Contraseña, Email, Telefono, Domicilio, ContadorIngresosIncorrectos, " +
@@ -103,7 +103,7 @@
         public bool Actualizar(Usuario objUpd)
         {
             var usu = ObtenerUsuarioConEmail(objUpd.Email);
-            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { objUpd.Nombre, usu.Email }, new List<int> { usu.UsuarioId });
+            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { objUpd.Nombre, usu.Email, usu.Contraseña });
 
             var queryString = $"UPDATE Usuario SET Nombre = @nombre, Apellido = @apellido, Email = @email, Telefono = @telefono, Domicilio = @domicilio, DVH = @dvh, PrimerLogin=@PrimerLogin WHERE UsuarioId = @usuarioId";
 
@@ -314,5 +314,37 @@
                 return Exec<int>(queryString)[0];
             });
         }
+
+        public void CargarDVHPatentes()
+        {
+            var query = "SELECT * FROM Usuario";
+            var listaUsuarios = new List<Usuario>();
+
+
+            CatchException(() =>
+            {
+                listaUsuarios = Exec<Usuario>(query);
+            });
+
+            foreach (var usuario in listaUsuarios)
+            {
+                var digito = digitoVerificador.CalcularDVHorizontal(new List<string>() { usuario.Nombre, usuario.Email, usuario.Contraseña });
+
+                //HACER update
+
+                var q = $"UPDATE Usuario SET DVH = {digito} WHERE UsuarioId = @Id";
+
+                CatchException(() =>
+                {
+                    Exec(
+                        q,
+                        new
+                        {
+                            @Id = usuario.UsuarioId
+                        });
+                });
+            }
+        }
+
     }
 }

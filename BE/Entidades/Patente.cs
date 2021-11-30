@@ -8,5 +8,7 @@
         public string Descripcion { get; set; }
 
         public bool Negada { get; set; }
+
+        public int DVH { get; set; }
     }
 }

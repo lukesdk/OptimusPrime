@@ -119,7 +119,7 @@
             return bitacoras;
         }
 
-        public int GenerarDVH(Usuario usu)
+        public int GenerarDVH()
         {
             var bitacora = new Bitacora();
             var bitacoraId = ObtenerUltimoIdBitacora();
@@ -132,7 +132,7 @@
             }
 
             bitacora = LeerBitacoraConId(bitacoraId);
-            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { bitacora.InformacionAsociada, bitacora.Actividad, bitacora.Criticidad }, new List<int> { usu.UsuarioId, bitacoraId });
+            var digitoVH = digitoVerificador.CalcularDVHorizontal(new List<string> { bitacora.InformacionAsociada, bitacora.Actividad, bitacora.Criticidad });
             return digitoVH;
         }
 
@@ -144,6 +144,37 @@
             {
                 return Exec<string>(queryString);
             });
+        }
+
+        public void CargarDVHBitacora()
+        {
+            var query = "SELECT * FROM Bitacora";
+            var listaBitacora = new List<Bitacora>();
+
+
+            CatchException(() =>
+            {
+                listaBitacora = Exec<Bitacora>(query);
+            });
+
+            foreach (var bitacora in listaBitacora)
+            {
+                var digito = digitoVerificador.CalcularDVHorizontal(new List<string>() { bitacora.InformacionAsociada, bitacora.Actividad, bitacora.Criticidad });
+
+                //HACER update
+
+                var q = $"UPDATE Bitacora SET DVH = {digito} WHERE IdLog = @Id";
+
+                CatchException(() =>
+                {
+                    Exec(
+                        q,
+                        new
+                        {
+                            @Id = bitacora.IdLog
+                        });
+                });
+            }
         }
     }
 }

@@ -15,5 +15,7 @@
         int ObtenerEstadoVentaConString(string estado);
 
         int ObtenerTipoVentaConString(string tipoVta);
+
+        void CargarDVHVenta();
     }
 }

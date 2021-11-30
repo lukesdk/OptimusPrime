@@ -26,5 +26,7 @@
         Usuario ObtenerUsuarioConId(int usuarioId);
 
         List<Usuario> TraerUsuariosConPatentesYFamilias();
+
+        void CargarDVHPatentes();
     }
 }

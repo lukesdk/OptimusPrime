@@ -92,5 +92,10 @@
         {
             return patenteDAL.ObtenerPatentePorDescripcion(descripcion, usuarioId);
         }
+
+        public void CargarDVHPatentes()
+        {
+            patenteDAL.CargarDVHPatentes();
+        }
     }
 }

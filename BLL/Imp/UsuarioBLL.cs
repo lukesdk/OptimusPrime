@@ -97,5 +97,10 @@
         {
             return usuarioDAL.TraerUsuariosConPatentesYFamilias();
         }
+
+        public void CargarDVHPatentes()
+        {
+            usuarioDAL.CargarDVHPatentes();
+        }
     }
 }

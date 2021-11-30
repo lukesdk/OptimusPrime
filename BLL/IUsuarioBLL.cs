@@ -20,5 +20,7 @@
         bool DesactivarUsuario(string email);
 
         List<Usuario> TraerUsuariosConPatentesYFamilias();
+
+        void CargarDVHPatentes();
     }
 }

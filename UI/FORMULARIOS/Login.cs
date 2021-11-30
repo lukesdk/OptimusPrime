@@ -20,6 +20,9 @@ namespace UI
         private readonly IIdiomaBLL idiomaBLL;
         private readonly IDigitoVerificador digitoVerificador;
         private readonly ITraductor traductor;
+        private IPatenteBLL patenteBLL;
+        private IVentaBLL ventaBLL;
+        private IBitacoraBLL bitacoraBLL;
 
         public Login(IIdiomaBLL idiomaBLL, IDigitoVerificador digitoVerificador, ITraductor traductor)
         {
@@ -36,6 +39,9 @@ namespace UI
             log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             PrincipalForm = IoCContainer.Resolve<IPrincipal>();
             usuarioBLL = IoCContainer.Resolve<IUsuarioBLL>();
+            patenteBLL = IoCContainer.Resolve<IPatenteBLL>();
+            ventaBLL = IoCContainer.Resolve<IVentaBLL>();
+            bitacoraBLL = IoCContainer.Resolve<IBitacoraBLL>();
             formControl = IoCContainer.Resolve<IFormControl>();
             CargarCombo();
             formControl.LenguajeSeleccionado = (Idioma)cbo_idioma.SelectedItem;
@@ -66,7 +72,15 @@ namespace UI
                     {
                         if (usuarioBLL.LogIn(input.Items["Usuario"], input.Items["Contraseña"]))
                         {
+                            //Esto solo recalcula el DVVertical en caso de que borren una row
                             digitoVerificador.ActualizarDVVertical("Usuario");
+                            digitoVerificador.ActualizarDVVertical("Bitacora");
+                            digitoVerificador.ActualizarDVVertical("Patente");
+                            digitoVerificador.ActualizarDVVertical("Venta");
+                            usuarioBLL.CargarDVHPatentes();
+                            patenteBLL.CargarDVHPatentes();
+                            bitacoraBLL.CargarDVHBitacora();
+                            ventaBLL.CargarDVHVenta();
                         }
                     }
                     else
@@ -74,6 +88,11 @@ namespace UI
                         Alert.ShowSimpleAlert("Usted no es un usuario administrador", "MSJ087");
                         this.Close();
                     }
+                }
+                else
+                {
+                    Alert.ShowSimpleAlert("Usted no es un usuario administrador", "MSJ087");
+                    this.Close();
                 }
 
             }

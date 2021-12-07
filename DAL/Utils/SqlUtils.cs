@@ -5,35 +5,34 @@
     using System.Configuration;
     using System.Data;
     using System.Data.SqlClient;
+    using System.IO;
     using System.Linq;
-
+    using EasyEncryption;
 
     //conexion a la base de datos
     public class SqlUtils : BaseDao
     {
+        public const string Key = "aZr2URKx";
+        public const string Iv = "HNtgQw0w";
+
         ////private static log4net.ILog log;
         public SqlUtils()
         {
         }
-
+        //string de conexion encriptado tomando del txt la informacion de la BD encriptandola
         public static SqlConnection Connection(string newDatabaseName = null)
         {
-            var conn = new SqlConnection(ConfigurationManager.AppSettings["connString"]);
-           
+            var path = "C:\\diploma-master\\GIT\\OptimusPrime\\UI\\secret.txt";
+            var readText = File.ReadAllText(path); //Leo el archivo
+            var connString = DES.Decrypt(readText, Key, Iv); //Desencripto
+
+            var conn = new SqlConnection(connString);
+
             if (!string.IsNullOrEmpty(newDatabaseName))
             {
-                var appPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                var configFile = System.IO.Path.Combine(appPath, "UI.exe.config");
-                var configFileMap = new ExeConfigurationFileMap();
-                configFileMap.ExeConfigFilename = configFile;
-                var config = ConfigurationManager.OpenMappedExeConfiguration(configFileMap, ConfigurationUserLevel.None);
-
-                config.AppSettings.Settings["connString"].Value = $"Data Source=.\\SQLEXPRESS;Initial Catalog={newDatabaseName};Integrated Security=True";
-                config.Save();
-
-                ConfigurationManager.RefreshSection("appSettings");
-
-                conn.ConnectionString = conn.ConnectionString.Replace(conn.Database, newDatabaseName);
+                var newEncrypted = DES.Encrypt($"Data Source=.\\SQLEXPRESS;Initial Catalog={newDatabaseName};Integrated Security=True", Key, Iv); //Encripto el nuevo string
+                File.WriteAllText(path, newEncrypted);//escribo el archivo
+                conn = new SqlConnection(DES.Decrypt(newEncrypted, Key, Iv));
             }
 
             return conn;
@@ -67,52 +66,6 @@
             {
                 return 1;
             }
-        }
-
-        private static void SetearConfiguracion()
-        {
-            ////log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            var connectionString = config.AppSettings.Settings["connString"].Value;
-            var startIndex = connectionString.IndexOf('=');
-            var endIndex = connectionString.IndexOf('\\');
-            var cambiarNombre = connectionString.Substring(startIndex + 1, endIndex - startIndex - 1);
-            var nuevoConnectionString = connectionString.Replace(cambiarNombre, Environment.MachineName);
-            config.AppSettings.Settings["connString"].Value = nuevoConnectionString;
-            ////log.Logger.Repository.GetAppenders().OfType<AdoNetAppender>().SingleOrDefault().ConnectionString = nuevoConnectionString;
-            config.Save(ConfigurationSaveMode.Modified, true);
-        }
-
-        private static string GetStringsFromRegister(string table, string connectionString)
-        {
-            string returnValue = "not implemented";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                var queryString = "SELECT * FROM Usuario;";
-
-                SqlCommand command = new SqlCommand(queryString, connection);
-                DataTable dt = new DataTable();
-
-                var da = new SqlDataAdapter(command);
-
-                try
-                {
-                    connection.Open();
-
-                    da.Fill(dt);
-
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                    }
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }
-
-            return returnValue;
         }
     }
 }

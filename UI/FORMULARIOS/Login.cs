@@ -66,9 +66,10 @@ namespace UI
                 {
                     var usuario = usuarioBLL.ObtenerUsuarioConEmail(input.Items["Usuario"]);
                     formControl.GuardarDatosSesionUsuario(usuario);
+                    formControl.ObtenerPermisosUsuario();
                     usuario = formControl.ObtenerInfoUsuario();
 
-                    if (usuario.Familia.Any(x => x.Descripcion == "Admin"))
+                    if (usuario.Patentes.Any(x => x.Descripcion == "RecalcularDV"))
                     {
                         if (usuarioBLL.LogIn(input.Items["Usuario"], input.Items["Contraseña"]))
                         {
@@ -119,6 +120,11 @@ namespace UI
                 var usuario = txt_user.Text;
                 var contraseña = txt_contraseña.Text;
                 ////lucas_matalima@hotmail.com pw: salom645
+
+                if(string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contraseña))
+                {
+                    MessageBox.Show("Revise los datos");
+                }
 
                 if (usuarioBLL.ObtenerUsuarioConEmail(usuario).Activo)
                 {

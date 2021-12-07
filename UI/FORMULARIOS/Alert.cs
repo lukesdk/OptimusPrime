@@ -27,7 +27,7 @@
         {
             var mensaje = ProcessMessage(messageCode);
            
-            if (string.IsNullOrEmpty(mensaje))
+            if (!string.IsNullOrEmpty(mensaje))
             {
                 msj = string.Empty;
                 msj = mensaje;
